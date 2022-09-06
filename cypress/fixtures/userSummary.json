@@ -1,0 +1,8 @@
+{
+  "timeHorizon": 21,
+  "goal": ["Diversify", "BuildGlobalPortfolio"],
+  "investmentAmount": 22222222,
+  "lastProposalDate": null,
+  "riskLevel": "moderately_aggressive",
+  "dealStatus": "proposal_accepted"
+}

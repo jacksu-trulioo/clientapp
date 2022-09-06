@@ -1,0 +1,66 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "distributions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dealName": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "number"
+            }
+          },
+          "required": ["dealName", "amount"]
+        }
+      },
+      "capitalCalls": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dealName": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "number"
+            }
+          },
+          "required": ["dealName", "amount"]
+        }
+      },
+      "exits": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dealName": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "number"
+            }
+          },
+          "required": ["dealName", "amount"]
+        }
+      },
+      "numberOfEvents": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "date",
+      "distributions",
+      "capitalCalls",
+      "exits",
+      "numberOfEvents"
+    ]
+  }
+}

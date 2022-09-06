@@ -1,0 +1,76 @@
+{
+  "$ref": "#/definitions/marketAll",
+  "definitions": {
+    "marketAll": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summaryTitle": {
+          "type": "string"
+        },
+        "summaryText": {
+          "type": "string"
+        },
+        "allMarkets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllMarket"
+          }
+        }
+      },
+      "required": ["allMarkets", "summaryText", "summaryTitle"],
+      "title": "marketAll"
+    },
+    "AllMarket": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "badText": {
+          "type": "string"
+        },
+        "goodText": {
+          "type": "string"
+        },
+        "spectrum": {
+          "$ref": "#/definitions/Spectrum"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["badText", "description", "goodText", "spectrum", "title"],
+      "title": "AllMarket"
+    },
+    "Spectrum": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "$ref": "#/definitions/End"
+        },
+        "end": {
+          "$ref": "#/definitions/End"
+        }
+      },
+      "required": ["end", "start"],
+      "title": "Spectrum"
+    },
+    "End": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": ["date", "value"],
+      "title": "End"
+    }
+  }
+}

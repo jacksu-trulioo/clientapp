@@ -1,0 +1,320 @@
+{
+  "$ref": "#/definitions/investmentListing",
+  "definitions": {
+    "investmentListing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lastValuationDate": {
+          "type": "string"
+        },
+        "accountCreationDate": {
+          "type": "string"
+        },
+        "groupByDeals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupByDeal"
+          }
+        },
+        "investmentVehicleList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "accountCreationDate",
+        "groupByDeals",
+        "investmentVehicleList",
+        "lastValuationDate"
+      ],
+      "title": "investmentListing"
+    },
+    "GroupByDeal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "timeperiod": {
+          "$ref": "#/definitions/Timeperiod"
+        },
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        }
+      },
+      "required": ["deals", "timeperiod"],
+      "title": "GroupByDeal"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "investments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Investment"
+          }
+        }
+      },
+      "required": ["investmentVehicle", "investments", "region"],
+      "title": "Deal"
+    },
+    "Investment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "portfolioSize": {
+          "type": "number"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "industry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Industry"
+          }
+        },
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "distributionAmount": {
+          "type": "number"
+        },
+        "marketValue": {
+          "type": "number"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "performance": {
+          "$ref": "#/definitions/Performance"
+        },
+        "holdingPeriod": {
+          "type": "integer"
+        },
+        "initialInvestmentDate": {
+          "type": "string"
+        },
+        "priceDate": {
+          "type": "string"
+        },
+        "sponsorOrPartner": {
+          "type": "string"
+        },
+        "strategy": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "brochure": {
+          "$ref": "#/definitions/Brochure"
+        }
+      },
+      "required": [
+        "age",
+        "bookValue",
+        "brochure",
+        "distributionAmount",
+        "holdingPeriod",
+        "id",
+        "industry",
+        "initialInvestmentDate",
+        "investmentVehicle",
+        "marketValue",
+        "name",
+        "performance",
+        "portfolioSize",
+        "region",
+        "sponsorOrPartner",
+        "strategy",
+        "type"
+      ],
+      "title": "Investment"
+    },
+    "Brochure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Region"
+        },
+        "description": {
+          "type": "string"
+        },
+        "largeImageURL": {
+          "type": "string"
+        },
+        "smallImage1URL": {
+          "type": "string"
+        },
+        "smallImage2URL": {
+          "type": "string"
+        }
+      },
+      "required": ["address", "description"],
+      "title": "Brochure"
+    },
+    "Industry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/Key"
+        },
+        "langCode": {
+          "$ref": "#/definitions/LangCode"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        }
+      },
+      "required": ["key", "langCode", "value"],
+      "title": "Industry"
+    },
+    "Performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "Performance"
+    },
+    "Timeperiod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "quarter": {
+          "type": "integer"
+        }
+      },
+      "required": ["quarter", "year"],
+      "title": "Timeperiod"
+    },
+    "Region": {
+      "type": "string",
+      "enum": ["northAmerica", "asia", "europe", "global"],
+      "title": "Region"
+    },
+    "Key": {
+      "type": "string",
+      "enum": [
+        "other",
+        "informationTechnology",
+        "healthCare",
+        "consumerDiscretionary",
+        "financials",
+        "industrials",
+        "energy",
+        "transportation",
+        "realEstate",
+        "consumerStaples",
+        "media",
+        "automotive",
+        "telecommunicationServices",
+        "entertainment",
+        "diversified",
+        "materials",
+        "education"
+      ],
+      "title": "Key"
+    },
+    "LangCode": {
+      "type": "string",
+      "enum": ["EN", "AR"],
+      "title": "LangCode"
+    },
+    "Value": {
+      "type": "string",
+      "enum": [
+        "Other",
+        "أخرى",
+        "Information Technology",
+        "تكنولوجيا المعلومات",
+        "Health Care",
+        "الرعاية الصحية",
+        "Consumer Discretionary",
+        "السلع الاستهلاكية الكمالية",
+        "financials",
+        "المالية",
+        "Industrials",
+        "الصناعات",
+        "Energy",
+        "الطاقة",
+        "Transportation",
+        "المواصلات",
+        "Real Estate",
+        "العقارات",
+        "Consumer Staples",
+        "السلع الاستهلاكية",
+        "Media",
+        "الاعلام",
+        "Automotive",
+        "المركبات",
+        "TeleComm. Services",
+        "الاتصالات",
+        "Entertainment",
+        "الترفيه",
+        "Diversified",
+        "متنوع",
+        "Materials",
+        "المواد",
+        "Education",
+        "التعليم"
+      ],
+      "title": "Value"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["downwards", "neutral", "upwards"],
+      "title": "Direction"
+    },
+    "Strategy": {
+      "type": "string",
+      "enum": ["illiquid", "liquid"],
+      "title": "Strategy"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "privateEquity",
+        "yielding",
+        "realEstate",
+        "otherIlliquid",
+        "fixedIncome",
+        "cash",
+        "alt"
+      ],
+      "title": "Type"
+    }
+  }
+}

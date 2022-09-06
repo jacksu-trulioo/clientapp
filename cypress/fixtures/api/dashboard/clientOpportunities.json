@@ -1,0 +1,78 @@
+{
+  "type": "array",
+  "default": [],
+  "title": "Client Opportunities",
+  "items": {
+    "type": "object",
+    "title": "A Schema",
+    "required": [
+      "opportunityId",
+      "opportunityName",
+      "about",
+      "expectedReturn",
+      "expectedExitYear",
+      "assetClass",
+      "country",
+      "sector",
+      "sponsor",
+      "opportunityImageUrl",
+      "countryImageUrl",
+      "isShariah",
+      "isProgram"
+    ],
+    "properties": {
+      "opportunityId": {
+        "type": "integer",
+        "title": "The opportunityId Schema"
+      },
+      "opportunityName": {
+        "type": "string",
+        "title": "The opportunityName Schema"
+      },
+      "about": {
+        "type": "string",
+        "title": "The about Schema"
+      },
+      "expectedReturn": {
+        "type": "string",
+        "title": "The expectedReturn Schema"
+      },
+      "expectedExitYear": {
+        "type": "string",
+        "title": "The expectedExitYear Schema"
+      },
+      "assetClass": {
+        "type": "string",
+        "title": "The assetClass Schema"
+      },
+      "country": {
+        "type": "string",
+        "title": "The country Schema"
+      },
+      "sector": {
+        "type": "string",
+        "title": "The sector Schema"
+      },
+      "sponsor": {
+        "type": "string",
+        "title": "The sponsor Schema"
+      },
+      "opportunityImageUrl": {
+        "type": "string",
+        "title": "The opportunityImageUrl Schema"
+      },
+      "countryImageUrl": {
+        "type": "string",
+        "title": "The countryImageUrl Schema"
+      },
+      "isShariah": {
+        "type": "integer",
+        "title": "The isShariah Schema"
+      },
+      "isProgram": {
+        "type": "boolean",
+        "title": "The isProgram Schema"
+      }
+    }
+  }
+}

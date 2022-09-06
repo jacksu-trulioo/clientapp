@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "account",
+    "aboutURL",
+    "email",
+    "helpURL",
+    "contactPreference",
+    "manager"
+  ],
+  "properties": {
+    "account": {
+      "type": "integer"
+    },
+    "aboutURL": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "helpURL": {
+      "type": "string"
+    },
+    "contactPreference": {
+      "type": "string"
+    },
+    "manager": {
+      "type": "object",
+      "required": ["email", "phone", "name"],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

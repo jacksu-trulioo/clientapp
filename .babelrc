@@ -1,0 +1,16 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-dynamic-import"]
+    },
+    // Required to prevent conflict with Jest nyc wrapper.
+    // See https://jestjs.io/docs/troubleshooting#coveragepathignorepatterns-seems-to-not-have-any-effect.
+    "e2e": {
+      "plugins": ["istanbul"]
+    }
+  }
+}

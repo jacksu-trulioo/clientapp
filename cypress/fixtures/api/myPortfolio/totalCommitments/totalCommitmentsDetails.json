@@ -1,0 +1,92 @@
+{
+  "$ref": "#/definitions/totalCommitmentsDetails",
+  "definitions": {
+    "totalCommitmentsDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lastValuationDate": {
+          "type": "string"
+        },
+        "totalCommitted": {
+          "type": "number"
+        },
+        "totalUncalled": {
+          "type": "number"
+        },
+        "commitments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commitment"
+          }
+        }
+      },
+      "required": [
+        "commitments",
+        "lastValuationDate",
+        "totalCommitted",
+        "totalUncalled"
+      ],
+      "title": "totalCommitmentsDetails"
+    },
+    "Commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "managedVehicle": {
+          "type": "string"
+        },
+        "deployed": {
+          "type": "number"
+        },
+        "committed": {
+          "type": "number"
+        },
+        "called": {
+          "type": "number"
+        },
+        "uncalled": {
+          "type": "number"
+        },
+        "portfolioWeight": {
+          "type": "integer"
+        },
+        "strategy": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "lastCommitment": {
+          "type": "string"
+        },
+        "holdingType": {
+          "$ref": "#/definitions/HoldingType"
+        }
+      },
+      "required": [
+        "called",
+        "committed",
+        "deployed",
+        "holdingType",
+        "id",
+        "lastCommitment",
+        "managedVehicle",
+        "portfolioWeight",
+        "strategy",
+        "uncalled"
+      ],
+      "title": "Commitment"
+    },
+    "HoldingType": {
+      "type": "string",
+      "enum": ["privateEquity"],
+      "title": "HoldingType"
+    },
+    "Strategy": {
+      "type": "string",
+      "enum": ["illiquid"],
+      "title": "Strategy"
+    }
+  }
+}

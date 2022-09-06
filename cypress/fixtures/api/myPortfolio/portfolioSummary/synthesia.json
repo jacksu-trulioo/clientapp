@@ -1,0 +1,32 @@
+{
+  "$ref": "#/definitions/synthesia",
+  "definitions": {
+    "synthesia": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "isSourceExists": {
+          "type": "boolean"
+        }
+      },
+
+      "if": {
+        "properties": {
+          "isSourceExists": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": ["isSourceExists", "url"]
+      },
+      "else": {
+        "required": ["isSourceExists"]
+      },
+      "title": "synthesia"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "video": "https://www.youtube.com/embed/7YTRKBwrbDA",
+  "guests": [
+    {
+      "id": "1f6cbe5b-2d42-4f27-a1f1-e45ef84869a9",
+      "name": "Abdulmohsin Al Omran",
+      "picture": "https://via.placeholder.com/200/1A1A1A99",
+      "title": "Founder/Chief Executive Officer",
+      "type": "Speaker"
+    },
+    {
+      "id": "57176601-5775-4209-9340-f38157a5e65a",
+      "name": "Mohammed Albaz",
+      "picture": "https://via.placeholder.com/200/1A1A1A99",
+      "title": "Senior Reporter at Sky News Arabia",
+      "type": "Moderator"
+    }
+  ],
+  "contents": [
+    {
+      "title": "Global Concern Over Rising Inflation",
+      "description": "The US Federal Reserve focuses on two major goals: unemployment and inflation. The world economy had recently suffered a significant slowdown with the Covid-19 pandemic"
+    },
+    {
+      "title": "Investment and Asset Management in the GCC",
+      "description": "When we established The Family Office in 2004, there was no licensing for wealth and asset management in the GCC. During the last 17 years"
+    },
+    {
+      "title": "Diversification to Protect Wealth from Investment Risks",
+      "description": "Risk affects the performance of the investment portfolio. At The Family Office, we design an investment strategy for the client based on a questionnaire that determines risks"
+    },
+    {
+      "title": "The Economic Situation in China",
+      "description": "We have been reading from the beginning bad news about China, but the country’s economy keeps growing and is today the second largest economy in the world. China’s economy is also expected to surpass the US economy."
+    },
+    {
+      "title": "Investing Deposits",
+      "description": "Safe is comfortable, but what is the result of comfort? When savers do not invest their deposits, the bank does. They only benefit if they are shareholders in the bank and will be harmed otherwise. Investment is not a choice."
+    },
+    {
+      "title": "Best Return Rates for Investors",
+      "description": "We have been telling investors since the beginning and for 17 years that they must accept returns between 6% and 8% to preserve their wealth with minimum risk, and that an average of 7% means that their capital will double every 10 years."
+    },
+    {
+      "title": "Investment Plan at The Family Office",
+      "description": "We spared no effort from the beginning to find solutions for investors based on the information we acquire when we analyze the economies and markets of the world. We are committed to the duty entrusted to us and we shall persist in our policy."
+    },
+    {
+      "title": "Shariah-Compliant Investments at The Family Office",
+      "description": "Shariah-compliant investment solutions differ from one company to the other. At The Family Office, 55% of our clients invest in deals that are approved by our Shariah panel."
+    },
+    {
+      "title": "Outlook for the GCC and the World Following Economic and Investment Transformations",
+      "description": "The GCC region is doing well and is blessed with its oil wealth, financial wealth that was amassed over the years, and human assets with 70% of the young generation less than 30 years old."
+    }
+  ],
+  "insightType": "Webinar",
+  "id": "89821411",
+  "title": "Abdulmohsin AlOmran | A Deep-Dive Into Diversification, Retirement, And Asset Protection In Wealth Management",
+  "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+  "description": "During a webinar held on 6 October, The Family Office Founder and CEO Abdulmohsin Al Omran discussed with Mohammed Albaz, Bahrain Bureau Senior Reporter at Sky News Arabia, rising inflation after the Covid-19 pandemic, investment horizons in the region, asset allocation, etc.",
+  "publishDate": "2021-10-07T00:00:00",
+  "estimatedDuration": "7 min"
+}

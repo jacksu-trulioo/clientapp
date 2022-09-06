@@ -1,0 +1,58 @@
+{
+  "$ref": "#/definitions/getTopDeals",
+  "definitions": {
+    "getTopDeals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        },
+        "valuationProgress": {
+          "type": "number"
+        }
+      },
+      "required": ["deals", "valuationProgress"],
+      "title": "getTopDeals"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "performanceObj": {
+          "$ref": "#/definitions/PerformanceObj"
+        }
+      },
+      "required": ["id", "name", "performanceObj"],
+      "title": "Deal"
+    },
+    "PerformanceObj": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "PerformanceObj"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["downwards", "upwards", "neutral"],
+      "title": "Direction"
+    }
+  }
+}

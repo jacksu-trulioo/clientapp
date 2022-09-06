@@ -1,0 +1,120 @@
+{
+  "type": "array",
+  "title": "Investment Cart",
+  "items": {
+    "type": "object",
+    "title": "A Schema",
+    "properties": {
+      "opportunityId": {
+        "type": "integer"
+      },
+      "opportunityName": {
+        "type": "string"
+      },
+      "sponsor": {
+        "type": "string"
+      },
+      "assetClass": {
+        "type": "string"
+      },
+      "sector": {
+        "type": "string"
+      },
+      "expectedExitYear": {
+        "type": "string"
+      },
+      "expectedReturn": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      },
+      "isInterested": {
+        "type": "string"
+      },
+      "minimumAmount": {
+        "type": "integer"
+      },
+      "maximumAmount": {
+        "type": "integer"
+      },
+      "isAddedToCart": {
+        "type": "boolean"
+      },
+      "isInvestmentPreferenceShariah": {
+        "type": "boolean"
+      },
+      "isProgram": {
+        "type": "boolean"
+      },
+      "associatedConventionalDealId": {
+        "type": "integer"
+      },
+      "isSeen": {
+        "type": "boolean"
+      },
+      "isScheduled": {
+        "type": "boolean"
+      },
+      "clientOpportunityId": {
+        "type": "integer"
+      },
+      "isExpiredDeal": {
+        "type": "boolean"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "isExpiredDeal": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "isExpiredDeal",
+            "isInvestmentPreferenceShariah",
+            "isProgram",
+            "maximumAmount",
+            "minimumAmount",
+            "opportunityId",
+            "opportunityName"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "isExpiredDeal": {
+              "const": false
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "assetClass",
+            "clientOpportunityId",
+            "country",
+            "expectedExitYear",
+            "expectedReturn",
+            "isAddedToCart",
+            "isExpiredDeal",
+            "isInterested",
+            "isInvestmentPreferenceShariah",
+            "isProgram",
+            "isScheduled",
+            "isSeen",
+            "maximumAmount",
+            "minimumAmount",
+            "opportunityId",
+            "opportunityName",
+            "sector",
+            "sponsor"
+          ]
+        }
+      }
+    ]
+  }
+}

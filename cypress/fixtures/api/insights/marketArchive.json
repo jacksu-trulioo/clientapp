@@ -1,0 +1,430 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/marketArchive"
+  },
+  "definitions": {
+    "marketArchive": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "insights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Insight"
+          }
+        },
+        "pageCount": {
+          "type": "integer"
+        },
+        "totalCount": {
+          "type": "integer"
+        }
+      },
+      "required": ["insights", "pageCount", "totalCount", "type"],
+      "title": "marketArchive"
+    },
+    "Insight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/definitions/Content"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "full_slug": {
+          "type": "string"
+        },
+        "sort_by_date": {
+          "type": "null"
+        },
+        "position": {
+          "type": "integer"
+        },
+        "tag_list": {
+          "type": "array",
+          "items": {}
+        },
+        "is_startpage": {
+          "type": "boolean"
+        },
+        "parent_id": {
+          "type": "integer"
+        },
+        "meta_data": {
+          "type": "null"
+        },
+        "group_id": {
+          "type": "string"
+        },
+        "first_published_at": {
+          "type": "string"
+        },
+        "release_id": {
+          "type": "null"
+        },
+        "lang": {
+          "$ref": "#/definitions/Lang"
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "alternates": {
+          "type": "array",
+          "items": {}
+        },
+        "default_full_slug": {
+          "type": "null"
+        },
+        "translated_slugs": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "alternates",
+        "content",
+        "created_at",
+        "default_full_slug",
+        "first_published_at",
+        "full_slug",
+        "group_id",
+        "id",
+        "is_startpage",
+        "lang",
+        "meta_data",
+        "name",
+        "parent_id",
+        "path",
+        "position",
+        "published_at",
+        "release_id",
+        "slug",
+        "sort_by_date",
+        "tag_list",
+        "translated_slugs",
+        "uuid"
+      ],
+      "title": "Insight"
+    },
+    "Content": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_uid": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "SRT_File": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "VideoURL": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "BannerImage": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "PosterImage": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "PublishDate": {
+          "type": "string"
+        },
+        "SRT_File_AR": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "EstimatedDuration": {
+          "type": "string"
+        },
+        "Details": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Summary"
+          }
+        },
+        "Contents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContentClientApp"
+          }
+        },
+        "CardImage": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "Disclaimer": {
+          "type": "string"
+        },
+        "OrderingSequence": {
+          "type": "string"
+        },
+        "client_app_content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContentClientApp"
+          }
+        },
+        "client_app_description": {
+          "type": "string"
+        },
+        "Video": {
+          "$ref": "#/definitions/DownloadLink"
+        },
+        "Guests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "CardImage_clientapp": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "DownloadLink": {
+          "$ref": "#/definitions/DownloadLink"
+        },
+        "ContentClientApp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContentClientApp"
+          }
+        },
+        "DescriptionClientApp": {
+          "type": "string"
+        },
+        "ContentsClientApp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContentClientApp"
+          }
+        }
+      },
+      "required": [
+        "BannerImage",
+        "Description",
+        "EstimatedDuration",
+        "PublishDate",
+        "Title",
+        "_uid",
+        "component"
+      ],
+      "title": "Content"
+    },
+    "BannerImage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alt": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "focus": {
+          "type": "null"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "filename": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "copyright": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "fieldtype": {
+          "$ref": "#/definitions/BannerImageFieldtype"
+        }
+      },
+      "required": [
+        "alt",
+        "copyright",
+        "fieldtype",
+        "filename",
+        "focus",
+        "id",
+        "name",
+        "title"
+      ],
+      "title": "BannerImage"
+    },
+    "ContentClientApp": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_uid": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "component": {
+          "$ref": "#/definitions/Component"
+        },
+        "Description": {
+          "type": "string"
+        }
+      },
+      "required": ["Description", "Title", "_uid", "component"],
+      "title": "ContentClientApp"
+    },
+    "DownloadLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "linktype": {
+          "$ref": "#/definitions/Linktype"
+        },
+        "fieldtype": {
+          "$ref": "#/definitions/DownloadLinkFieldtype"
+        },
+        "cached_url": {
+          "type": "string"
+        }
+      },
+      "required": ["cached_url", "fieldtype", "id", "linktype", "url"],
+      "title": "DownloadLink"
+    },
+    "Summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_uid": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "BannerImage": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "PublishDate": {
+          "type": "string"
+        },
+        "EstimatedDuration": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "BannerImage",
+        "Description",
+        "EstimatedDuration",
+        "PublishDate",
+        "Title",
+        "_uid",
+        "component"
+      ],
+      "title": "Summary"
+    },
+    "BannerImageFieldtype": {
+      "type": "string",
+      "enum": ["asset"],
+      "title": "BannerImageFieldtype"
+    },
+    "Component": {
+      "type": "string",
+      "enum": ["content-section"],
+      "title": "Component"
+    },
+    "DownloadLinkFieldtype": {
+      "type": "string",
+      "enum": ["multilink"],
+      "title": "DownloadLinkFieldtype"
+    },
+    "Linktype": {
+      "type": "string",
+      "enum": ["url"],
+      "title": "Linktype"
+    },
+    "Lang": {
+      "type": "string",
+      "enum": ["default"],
+      "title": "Lang"
+    }
+  }
+}

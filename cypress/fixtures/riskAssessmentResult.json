@@ -1,0 +1,15 @@
+{
+  "data": {
+    "rawRiskScore": 20,
+    "rawResponsivenessScore": 12,
+    "adjustedScore": 20,
+    "scoreDescription": "Moderately Aggressive",
+    "riskScore": 8,
+    "percentage": 0.73,
+    "responsivenessLevel": "Moderate",
+    "responsivenessLevelDisplay": "Paced Responder",
+    "scoreDescriptionId": "moderately_aggressive"
+  },
+  "message": "risk score calculated",
+  "status": "success"
+}

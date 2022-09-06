@@ -1,0 +1,150 @@
+{
+  "$ref": "#/definitions/portfolioOverview",
+  "definitions": {
+    "portfolioOverview": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cashFlowProjections": {
+          "type": "number"
+        },
+        "cashflowChartValuesCapitalCall": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "cashflowChartValues": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "itdGrowth": {
+          "$ref": "#/definitions/DGrowth"
+        },
+        "ytdGrowth": {
+          "$ref": "#/definitions/DGrowth"
+        },
+        "annualizedGrowth": {
+          "$ref": "#/definitions/DGrowth"
+        },
+        "profitLoss": {
+          "$ref": "#/definitions/ProfitLoss"
+        },
+        "profitLossChartValues": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "deals": {
+          "type": "integer"
+        },
+        "commitments": {
+          "type": "number"
+        },
+        "commitmentChartValues": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "totalCommitmentsStartAndEndDate": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marketSpectrumData": {
+          "$ref": "#/definitions/MarketSpectrumData"
+        },
+        "performanceChartValues": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "lastFourQuarters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "annualizedGrowth",
+        "cashFlowProjections",
+        "cashflowChartValues",
+        "commitmentChartValues",
+        "commitments",
+        "deals",
+        "itdGrowth",
+        "lastFourQuarters",
+        "marketSpectrumData",
+        "performanceChartValues",
+        "profitLoss",
+        "profitLossChartValues",
+        "totalCommitmentsStartAndEndDate",
+        "ytdGrowth"
+      ],
+      "title": "portfolioOverview"
+    },
+    "DGrowth": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "DGrowth"
+    },
+    "MarketSpectrumData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "$ref": "#/definitions/End"
+        },
+        "end": {
+          "$ref": "#/definitions/End"
+        }
+      },
+      "required": ["end", "start"],
+      "title": "MarketSpectrumData"
+    },
+    "End": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": ["date", "value"],
+      "title": "End"
+    },
+    "ProfitLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "money": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      },
+      "required": ["direction", "money"],
+      "title": "ProfitLoss"
+    }
+  }
+}

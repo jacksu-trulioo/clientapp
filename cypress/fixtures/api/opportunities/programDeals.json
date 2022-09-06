@@ -1,0 +1,136 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/programDeals"
+  },
+  "definitions": {
+    "programDeals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "concentration": {
+          "type": "integer"
+        },
+        "programId": {
+          "type": "integer"
+        },
+        "subscriptionAmount": {
+          "type": "string"
+        },
+        "isInvestmentPreferenceShariah": {
+          "type": "boolean"
+        },
+        "associatedConventionalProgramId": {
+          "type": "integer"
+        },
+        "programName": {
+          "type": "string"
+        },
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        }
+      },
+      "required": [
+        "associatedConventionalProgramId",
+        "concentration",
+        "deals",
+        "isInvestmentPreferenceShariah",
+        "programId",
+        "programName",
+        "subscriptionAmount"
+      ],
+      "title": "programDeals"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dealName": {
+          "type": "string"
+        },
+        "dealId": {
+          "type": "integer"
+        },
+        "unplacedAmount": {
+          "type": "integer"
+        },
+        "defaultSelection": {
+          "type": "boolean"
+        },
+        "sponsor": {
+          "type": "string"
+        },
+        "assetClass": {
+          "$ref": "#/definitions/AssetClass"
+        },
+        "assetClassAr": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "sectorAr": {
+          "type": "string"
+        },
+        "expectedExitYear": {
+          "type": "string"
+        },
+        "expectedReturn": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryAr": {
+          "type": "string"
+        },
+        "moreInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoreInfo"
+          }
+        },
+        "isShariah": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "assetClass",
+        "country",
+        "dealId",
+        "dealName",
+        "defaultSelection",
+        "expectedExitYear",
+        "expectedReturn",
+        "isShariah",
+        "moreInfo",
+        "sector",
+        "sponsor",
+        "unplacedAmount"
+      ],
+      "title": "Deal"
+    },
+    "MoreInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["title", "value"],
+      "title": "MoreInfo"
+    },
+    "AssetClass": {
+      "type": "string",
+      "enum": ["Private Equity", "Private Credit", "Real Estate"],
+      "title": "AssetClass"
+    }
+  }
+}

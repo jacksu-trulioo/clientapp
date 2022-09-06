@@ -1,0 +1,23 @@
+{
+  "baseUrl": "http://localhost:3000/",
+  "projectId": "qsrbfz",
+  "video": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "screenshotOnRunFailure": false,
+  "env": {
+    "auth0Audience": "https://tfo-uat.eu.auth0.com/api/v2/",
+    "auth0Domain": "tfo-uat.eu.auth0.com",
+    "auth0ClientId": "umf5SicJaUFgoXXyU0WX0ZMQqopUjXe0",
+    "auth0ClientSecret": "Jkm9Aj-Sqapy10B8s22xuh8vxgBoswIyp5o7FFBSt7nigLa4XZR4jh2kKEGNKHS_",
+    "auth0CookieSecret": "cd89fe3d05f1ca9093826293929966fbc0caf68d7980c3dc10f4ef22d0aeff14",
+    "auth0SessionCookieName": "appSession",
+    "cachedUsernameCookieName": "cachedUsername",
+    "auth0Scope": "openid profile email",
+    "auth0Username": "e2e_user@tfoco.com",
+    "auth0Password": "fFq3?$yyRJo9aiRH",
+    "codeCoverage": {
+      "url": "/api/__coverage__"
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "$ref": "#/definitions/portfolioSummaryAllocation",
+  "definitions": {
+    "portfolioSummaryAllocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allocationChartData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllocationChartData"
+          }
+        },
+        "assetTableData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssetTableData"
+          }
+        }
+      },
+      "required": ["allocationChartData", "assetTableData"],
+      "title": "portfolioSummaryAllocation"
+    },
+    "AllocationChartData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "color": {
+          "type": "string"
+        }
+      },
+      "required": ["color", "name", "value"],
+      "title": "AllocationChartData"
+    },
+    "AssetTableData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data"
+          }
+        },
+        "color": {
+          "type": "string"
+        }
+      },
+      "required": ["color", "data", "type"],
+      "title": "AssetTableData"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "portfolioSize": {
+          "type": "number"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "industry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Industry"
+          }
+        },
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "distributionAmount": {
+          "type": "integer"
+        },
+        "marketValue": {
+          "type": "number"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "performance": {
+          "$ref": "#/definitions/Performance"
+        },
+        "holdingPeriod": {
+          "type": "integer"
+        },
+        "initialInvestmentDate": {
+          "type": "string"
+        },
+        "priceDate": {
+          "type": "string"
+        },
+        "sponsorOrPartner": {
+          "type": "string"
+        },
+        "strategy": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "brochure": {
+          "$ref": "#/definitions/Brochure"
+        }
+      },
+      "required": [
+        "age",
+        "bookValue",
+        "brochure",
+        "distributionAmount",
+        "holdingPeriod",
+        "id",
+        "industry",
+        "initialInvestmentDate",
+        "investmentVehicle",
+        "marketValue",
+        "name",
+        "performance",
+        "portfolioSize",
+        "region",
+        "sponsorOrPartner",
+        "strategy"
+      ],
+      "title": "Data"
+    },
+    "Brochure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Region"
+        },
+        "description": {
+          "type": "string"
+        },
+        "largeImageURL": {
+          "type": "string"
+        },
+        "smallImage1URL": {
+          "type": "string"
+        },
+        "smallImage2URL": {
+          "type": "string"
+        }
+      },
+      "required": ["address", "description"],
+      "title": "Brochure"
+    },
+    "Industry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "langCode": {
+          "$ref": "#/definitions/LangCode"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["key", "langCode", "value"],
+      "title": "Industry"
+    },
+    "Performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "Performance"
+    },
+    "Region": {
+      "type": "string",
+      "enum": ["europe", "northAmerica", "asia", "global"],
+      "title": "Region"
+    },
+    "LangCode": {
+      "type": "string",
+      "enum": ["EN", "AR"],
+      "title": "LangCode"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["downwards", "upwards", "neutral"],
+      "title": "Direction"
+    },
+    "Strategy": {
+      "type": "string",
+      "enum": ["illiquid", "liquid"],
+      "title": "Strategy"
+    }
+  }
+}

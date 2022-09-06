@@ -1,0 +1,34 @@
+{
+  "popupDetails": [
+    {
+      "popupId": 1001,
+      "popupName": "OPPORTUNITIES_ADD_TO_CART",
+      "flag": true
+    },
+    {
+      "popupId": 1002,
+      "popupName": "OPPORTUNITIES_INVESTMENT_CART",
+      "flag": false
+    },
+    {
+      "popupId": 1003,
+      "popupName": "INVESTMENT_CART_CHECK_OUT",
+      "flag": false
+    },
+    {
+      "popupId": 1004,
+      "popupName": "SUBSCRIPTION_DETAILS_SUBSCRIPTION_AMOUNT",
+      "flag": false
+    },
+    {
+      "popupId": 1005,
+      "popupName": "PROGRAM_DETAILS_SELECT_DEAL",
+      "flag": false
+    },
+    {
+      "popupId": 1006,
+      "popupName": "ORDER_SUMMARY_CONFIRM",
+      "flag": false
+    }
+  ]
+}

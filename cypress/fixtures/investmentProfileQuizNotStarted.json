@@ -1,0 +1,23 @@
+{
+  "countryOfResidence": null,
+  "firstName": null,
+  "lastName": null,
+  "nationality": null,
+  "region": null,
+  "phoneCountryCode": null,
+  "phoneNumber": null,
+  "isDefinedSophisticatedByCMA": null,
+  "isAccreditedByCBB": null,
+  "isTaxableInUS": null,
+  "investorSurvey": {
+    "investMinimumAmount": null,
+    "whenToStartInvestment": null,
+    "interestedInvestments": [],
+    "investmentExperience": null,
+    "priorInvExperience": [],
+    "otherPriorDetails": null,
+    "otherInterestedInvDetails": null,
+    "preProposalInitialAction": null
+  },
+  "termsOfService": null
+}

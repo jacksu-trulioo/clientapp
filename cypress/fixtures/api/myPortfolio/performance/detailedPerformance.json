@@ -1,0 +1,264 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/detailedPerformanceData"
+  },
+  "definitions": {
+    "detailedPerformanceData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quarter": {
+          "$ref": "#/definitions/Quarter"
+        },
+        "detailedPerformance": {
+          "$ref": "#/definitions/DetailedPerformance"
+        },
+        "monthlyPerformance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonthlyPerformance"
+          }
+        },
+        "performanceChartData": {
+          "$ref": "#/definitions/PerformanceChartData"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "if": {
+        "properties": {
+          "quarter": {
+            "const": "ITD"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "detailedPerformance",
+          "monthlyPerformance",
+          "performanceChartData",
+          "quarter"
+        ]
+      },
+      "else": {
+        "required": [
+          "detailedPerformance",
+          "monthlyPerformance",
+          "performanceChartData",
+          "quarter",
+          "year"
+        ]
+      },
+      "title": "detailedPerformanceData"
+    },
+    "DetailedPerformance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "valueStart": {
+          "type": "number"
+        },
+        "valueEnd": {
+          "type": "number"
+        },
+        "itdAnnualizedPercent": {
+          "$ref": "#/definitions/percentDirection"
+        },
+        "itdAnnualizedPercentPerAnnum": {
+          "type": "number"
+        },
+        "netChangeValue": {
+          "$ref": "#/definitions/NetChangeValue"
+        },
+        "netChangePercent": {
+          "$ref": "#/definitions/percentDirection"
+        },
+        "liquidValue": {
+          "$ref": "#/definitions/percentDirection"
+        },
+        "liquidValuePerAnnum": {
+          "type": "number"
+        },
+        "illiquidValue": {
+          "$ref": "#/definitions/percentDirection"
+        },
+        "illiquidValuePerAnnum": {
+          "type": "number"
+        },
+        "illiquidVintage": {
+          "$ref": "#/definitions/percentDirection"
+        },
+        "illiquidVintagePerAnnum": {
+          "type": "number"
+        },
+        "sharpeRatio": {
+          "type": "number"
+        },
+        "riskVolatility": {
+          "type": "number"
+        },
+        "annualizedPerformance": {
+          "type": "number"
+        },
+        "additions": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "additions",
+        "annualizedPerformance",
+        "illiquidValue",
+        "illiquidValuePerAnnum",
+        "illiquidVintage",
+        "illiquidVintagePerAnnum",
+        "itdAnnualizedPercent",
+        "itdAnnualizedPercentPerAnnum",
+        "liquidValue",
+        "liquidValuePerAnnum",
+        "netChangePercent",
+        "netChangeValue",
+        "riskVolatility",
+        "sharpeRatio",
+        "valueEnd",
+        "valueStart"
+      ],
+      "title": "DetailedPerformance"
+    },
+    "percentDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "percentDirection"
+    },
+    "NetChangeValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "money": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "money"],
+      "title": "NetChangeValue"
+    },
+    "MonthlyPerformance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "netChange": {
+          "type": "number"
+        },
+        "additionsOrWithdrawels": {
+          "type": "number"
+        },
+        "performance": {
+          "type": "number"
+        },
+        "cumulativePerformancePercent": {
+          "type": "number"
+        },
+        "cumulativePerformanceValue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "additionsOrWithdrawels",
+        "cumulativePerformancePercent",
+        "cumulativePerformanceValue",
+        "netChange",
+        "performance",
+        "period"
+      ],
+      "title": "MonthlyPerformance"
+    },
+    "Period": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "month": {
+          "type": "integer"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": ["month", "year"],
+      "title": "Period"
+    },
+    "PerformanceChartData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cumulativeData": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "periodicData": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "months": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minMaxValue": {
+          "$ref": "#/definitions/MinMaxValue"
+        }
+      },
+      "required": ["cumulativeData", "minMaxValue", "months", "periodicData"],
+      "title": "PerformanceChartData"
+    },
+    "MinMaxValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      },
+      "required": ["max", "min"],
+      "title": "MinMaxValue"
+    },
+    "Quarter": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Quarter"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["upwards", "downwards", "neutral"],
+      "title": "Direction"
+    }
+  }
+}

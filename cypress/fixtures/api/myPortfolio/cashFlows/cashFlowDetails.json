@@ -1,0 +1,106 @@
+{
+  "$ref": "#/definitions/cashFlowDetails",
+  "definitions": {
+    "cashFlowDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "string"
+        },
+        "ytdDistributionProjection": {
+          "type": ["number", "string"]
+        },
+        "itdDistributionProjection": {
+          "type": ["number", "string"]
+        },
+        "ytdCapitalCallProjection": {
+          "type": ["number", "string"]
+        },
+        "itdCapitalCallProjection": {
+          "type": ["number", "string"]
+        },
+        "yearFrom": {
+          "type": "integer"
+        },
+        "yearTo": {
+          "type": "integer"
+        },
+        "distributionPerTimePeriod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DistributionPerTimePeriod"
+          }
+        }
+      },
+      "required": [
+        "distributionPerTimePeriod",
+        "itdCapitalCallProjection",
+        "itdDistributionProjection",
+        "year",
+        "yearFrom",
+        "yearTo",
+        "ytdCapitalCallProjection",
+        "ytdDistributionProjection"
+      ],
+      "title": "cashFlowDetails"
+    },
+    "DistributionPerTimePeriod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "timeperiod": {
+          "$ref": "#/definitions/Timeperiod"
+        },
+        "totalDistributions": {
+          "type": "integer"
+        },
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        }
+      },
+      "required": ["deals", "timeperiod", "totalDistributions"],
+      "title": "DistributionPerTimePeriod"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "distribution": {
+          "type": "integer"
+        }
+      },
+      "required": ["date", "distribution", "investmentVehicle", "name"],
+      "title": "Deal"
+    },
+    "Timeperiod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "quarter": {
+          "type": "integer"
+        },
+        "toDate": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Timeperiod"
+    }
+  }
+}

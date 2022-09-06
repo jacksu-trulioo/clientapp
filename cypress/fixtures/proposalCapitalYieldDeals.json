@@ -1,0 +1,75 @@
+[
+  {
+    "assetClass": "Private Equity",
+    "assets": [
+      {
+        "assetType": "deal",
+        "id": "1080",
+        "title": "Mediawan Leonine Studios",
+        "assetManager": "KKR",
+        "preferences": "",
+        "expectedExit": "2025",
+        "expectedReturn": "18% IRR / 2.1x MOIC",
+        "country": "Europe",
+        "sector": "Media",
+        "description": "Co-investment in the alliance of Leonine and Mediawan to create content powerhouse in Europe.",
+        "targetReturn": "",
+        "targetYield": "5%",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Private Equity",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      }
+    ]
+  },
+  {
+    "assetClass": "Real Estate",
+    "assets": [
+      {
+        "assetType": "deal",
+        "id": "1036",
+        "title": "Project Lakehaven",
+        "assetManager": "Golub & Company",
+        "preferences": "Sharia’h",
+        "expectedExit": "2026",
+        "expectedReturn": "9.5% IRR / 7% average yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "Co-investment with Golub & Company in a joint-venture acquisition of Lakehaven Apartments.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      },
+      {
+        "assetType": "deal",
+        "id": "1011",
+        "title": "Project Liberty",
+        "assetManager": "Broadshore Capital Partners",
+        "preferences": "Sharia’h",
+        "expectedExit": "2025",
+        "expectedReturn": "10% IRR / 6.5% Yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "338-unit multifamily consisting of six residential buildings in the suburb of Pittsburgh.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      }
+    ]
+  }
+]

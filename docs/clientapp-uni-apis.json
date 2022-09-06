@@ -1,0 +1,4940 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Client App",
+    "description": "API documentation for Client App BFF APIs",
+    "contact": {
+      "email": "support@ilmux.com"
+    },
+    "version": "1.0.0"
+  },
+  "components": {
+    "schemas": {
+      "profile": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "number"
+          },
+          "aboutURL": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "helpURL": {
+            "type": "string"
+          },
+          "contactPreference": {
+            "type": "string"
+          },
+          "manager": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["email", "phone", "name"]
+          }
+        },
+        "required": ["account", "manager"]
+      },
+      "recent-activities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "month": {
+              "type": "string"
+            },
+            "recentFunding": {
+              "type": "number"
+            },
+            "moneyInvested": {
+              "type": "number",
+              "format": "float"
+            },
+            "distribution": {
+              "type": "object",
+              "properties": {
+                "capitalGain": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "incomeDistribution": {
+                  "type": "number",
+                  "format": "float"
+                }
+              }
+            }
+          }
+        }
+      },
+      "dashboard-performance-chart": {
+        "type": "object",
+        "properties": {
+          "netChangePercent": {
+            "type": "object",
+            "properties": {
+              "percent": {
+                "type": "number"
+              },
+              "direction": {
+                "type": "string"
+              }
+            }
+          },
+          "timeperiod": {
+            "type": "object",
+            "properties": {
+              "quarter": {
+                "type": "number"
+              },
+              "year": {
+                "type": "number"
+              }
+            }
+          },
+          "cummulativeData": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "periodicData": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "timeLine": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "minMax": {
+            "type": "object",
+            "properties": {
+              "max": {
+                "type": "number"
+              },
+              "min": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "blocked": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "email_verified": {
+            "type": "string"
+          },
+          "family_name": {
+            "type": "string"
+          },
+          "given_name": {
+            "type": "string"
+          },
+          "identities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "connection": {
+                  "type": "string"
+                },
+                "isSocial": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "picture": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "user_metadata": {
+            "type": "object",
+            "properties": {
+              "phone_number": {
+                "type": "string"
+              },
+              "force_change_password": {
+                "type": "boolean"
+              },
+              "registered_devices": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "contact_preference": {
+                "type": "string"
+              },
+              "mfa_access": {
+                "type": "string"
+              },
+              "mfa_use": {
+                "type": "boolean"
+              }
+            }
+          },
+          "username": {
+            "type": "string"
+          },
+          "last_password_reset": {
+            "type": "string"
+          },
+          "last_login": {
+            "type": "string"
+          },
+          "last_ip": {
+            "type": "string"
+          },
+          "logins_count": {
+            "type": "number"
+          }
+        }
+      },
+      "lastest-insights": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "published_at": {
+              "type": "string"
+            },
+            "id": {
+              "type": "number"
+            },
+            "uuid": {
+              "type": "string"
+            },
+            "content": {
+              "type": "object",
+              "properties": {
+                "_uid": {
+                  "type": "string"
+                },
+                "Title": {
+                  "type": "string"
+                },
+                "SRT_File": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "focus": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "copyright": {
+                      "type": "string"
+                    },
+                    "fieldtype": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "VideoURL": {
+                  "type": "string"
+                },
+                "component": {
+                  "type": "string"
+                },
+                "BannerImage": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "focus": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "copyright": {
+                      "type": "string"
+                    },
+                    "fieldtype": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Description": {
+                  "type": "string"
+                },
+                "PosterImage": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "focus": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "copyright": {
+                      "type": "string"
+                    },
+                    "fieldtype": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "PublishDate": {
+                  "type": "string"
+                },
+                "SRT_File_AR": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "focus": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "copyright": {
+                      "type": "string"
+                    },
+                    "fieldtype": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "EstimatedDuration": {
+                  "type": "string"
+                }
+              }
+            },
+            "slug": {
+              "type": "string"
+            },
+            "full_slug": {
+              "type": "string"
+            },
+            "sort_by_date": {
+              "type": "string"
+            },
+            "position": {
+              "type": "number"
+            },
+            "tag_list": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "is_startpage": {
+              "type": "boolean"
+            },
+            "parent_id": {
+              "type": "number"
+            },
+            "meta_data": {
+              "type": "string"
+            },
+            "group_id": {
+              "type": "string"
+            },
+            "first_published_at": {
+              "type": "string"
+            },
+            "release_id": {
+              "type": "number"
+            },
+            "lang": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "alternates": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "default_full_slug": {
+              "type": "string"
+            },
+            "translated_slugs": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "portfolio-summary-allocation": {
+        "type": "object",
+        "properties": {
+          "allocationChartData": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "percent": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "assetTableData": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "portfolioSize": {
+                        "type": "number"
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "number"
+                      },
+                      "industry": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "langCode": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "investmentVehicle": {
+                        "type": "string"
+                      },
+                      "distributionAmount": {
+                        "type": "number"
+                      },
+                      "marketValue": {
+                        "type": "number"
+                      },
+                      "bookValue": {
+                        "type": "number"
+                      },
+                      "performance": {
+                        "type": "object",
+                        "properties": {
+                          "percent": {
+                            "type": "number"
+                          },
+                          "direction": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "holdingPeriod": {
+                        "type": "number"
+                      },
+                      "initialInvestmentDate": {
+                        "type": "string"
+                      },
+                      "priceDate": {
+                        "type": "string"
+                      },
+                      "sponsorOrPartner": {
+                        "type": "string"
+                      },
+                      "strategy": {
+                        "type": "string"
+                      },
+                      "brochure": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "largeImageURL": {
+                            "type": "string"
+                          },
+                          "smallImage1URL": {
+                            "type": "string"
+                          },
+                          "smallImage2URL": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "client-opportunities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "clientOpportunityId": {
+              "type": "number"
+            },
+            "opportunityId": {
+              "type": "number"
+            },
+            "opportunityName": {
+              "type": "string"
+            },
+            "media": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "thumbnail": {
+                    "type": "string"
+                  },
+                  "url_ar": {
+                    "type": "string"
+                  },
+                  "thumbnail_ar": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "pdfUrl": {
+              "type": "string"
+            },
+            "sponsor": {
+              "type": "string"
+            },
+            "assetClass": {
+              "type": "string"
+            },
+            "assetClassAr": {
+              "type": "string"
+            },
+            "sector": {
+              "type": "string"
+            },
+            "sectorAr": {
+              "type": "string"
+            },
+            "expectedExitYear": {
+              "type": "string"
+            },
+            "expectedReturn": {
+              "type": "string"
+            },
+            "countryImageUrl": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "countryAr": {
+              "type": "string"
+            },
+            "isInterested": {
+              "type": "string"
+            },
+            "isSeen": {
+              "type": "boolean"
+            },
+            "isScheduled": {
+              "type": "boolean"
+            },
+            "isValid": {
+              "type": "boolean"
+            },
+            "isShariah": {
+              "type": "boolean"
+            },
+            "closingDate": {
+              "type": "string"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "nativeDeal": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": "string"
+                },
+                "about": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "disclaimer": {
+                  "type": "string"
+                },
+                "locationAr": {
+                  "type": "string"
+                },
+                "aboutAr": {
+                  "type": "string"
+                },
+                "messageAr": {
+                  "type": "string"
+                },
+                "disclaimerAr": {
+                  "type": "string"
+                },
+                "breakdown": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "titleAr": {
+                        "type": "string"
+                      },
+                      "valueAr": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "info": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "titleAr": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "valueAr": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "gallery": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "thumbnail": {
+                        "type": "string"
+                      },
+                      "url_ar": {
+                        "type": "string"
+                      },
+                      "thumbnail_ar": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "minimumAmount": {
+              "type": "number"
+            },
+            "maximumAmount": {
+              "type": "number"
+            },
+            "isProgram": {
+              "type": "boolean"
+            },
+            "isAddedToCart": {
+              "type": "boolean"
+            },
+            "associatedConventionalDealId": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "calendar": {
+        "type": "object",
+        "properties": {
+          "endDate": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          }
+        },
+        "required": ["endDate", "startDate", "timeZone"]
+      },
+      "calendarResponse": {
+        "type": "object",
+        "properties": {
+          "schedules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "hasFreeHour": {
+                  "type": "boolean"
+                },
+                "hours": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "time": {
+                        "type": "string"
+                      },
+                      "available": {
+                        "type": "boolean"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "rawTime": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "schedule": {
+        "type": "object",
+        "properties": {
+          "agenda": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ClientEmail": {
+            "type": "string"
+          },
+          "endDateTime": {
+            "type": "string"
+          },
+          "startDateTime": {
+            "type": "string"
+          },
+          "reminderMinutesBeforeStart": {
+            "type": "number"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "meetingType": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "vendor": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "agenda",
+          "ClientEmail",
+          "startDateTime",
+          "endDateTime",
+          "meetingType",
+          "payload",
+          "timeZone",
+          "reminderMinutesBeforeStart"
+        ]
+      },
+      "scheduleReponse": {
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "string"
+          },
+          "onlineMeetingUrl": {
+            "type": "string"
+          },
+          "clientEventId": {
+            "type": "string"
+          },
+          "rmEventId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "appointmentId",
+          "onlineMeetingUrl",
+          "rmEventId",
+          "clientEventId"
+        ]
+      },
+      "crrifnonAA": {
+        "type": "object",
+        "properties": {
+          "nonAA": {
+            "type": "boolean"
+          }
+        }
+      },
+      "login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": ["email", "password"]
+      },
+      "loginResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "role": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["role"]
+      },
+      "crr": {
+        "type": "object",
+        "properties": {
+          "targetAssetAllocation": {
+            "type": "object",
+            "properties": {
+              "liquid": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "targetAssetAllocationPercent": {
+                          "type": "number"
+                        },
+                        "currentAssetAllocationPercent": {
+                          "type": "number"
+                        },
+                        "deviation": {
+                          "type": "number"
+                        },
+                        "subStrategy": {
+                          "type": "string"
+                        },
+                        "strategy": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "strategyPerc": {
+                    "type": "string"
+                  },
+                  "liquidPercentage": {
+                    "type": "string"
+                  }
+                }
+              },
+              "illiquid": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "targetAssetAllocationPercent": {
+                          "type": "number"
+                        },
+                        "currentAssetAllocationPercent": {
+                          "type": "number"
+                        },
+                        "deviation": {
+                          "type": "number"
+                        },
+                        "subStrategy": {
+                          "type": "string"
+                        },
+                        "strategy": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "strategyPerc": {
+                    "type": "string"
+                  },
+                  "liquidPercentage": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "assetAllocationOverYears": {
+            "type": "object",
+            "properties": {
+              "assetClassValues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "years": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "values": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "years": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "liquidAtBeginning": {
+                "type": "number"
+              },
+              "illiquidAtBeginning": {
+                "type": "number"
+              },
+              "illiquidAfterCommitments": {
+                "type": "number"
+              },
+              "liquidAfterCommitments": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "required": ["targetAssetAllocation", "assetAllocationOverYears"]
+      },
+      "dashboard-performance-metrics": {
+        "type": "object",
+        "properties": {
+          "totalAumValue": {
+            "type": "number"
+          },
+          "ytdGrowth": {
+            "type": "number"
+          },
+          "itdGrowth": {
+            "type": "number"
+          },
+          "annualizedGrowth": {
+            "type": "number"
+          },
+          "irrGrowth": {
+            "type": "number"
+          },
+          "netChangeValue": {
+            "type": "number"
+          }
+        }
+      },
+      "redeem-funds": {
+        "type": "object",
+        "properties": {
+          "redemptionFunds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "balance": {
+                  "type": "number"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "fundName": {
+                  "type": "string"
+                }
+              },
+              "required": ["date", "fundName", "balance"]
+            }
+          }
+        },
+        "required": ["redemptionFunds"]
+      },
+      "redeemDetails": {
+        "type": "object",
+        "properties": {
+          "fundName": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "redemptionAmount": {
+            "type": "number"
+          },
+          "remainingAmount": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "fundName",
+          "reason",
+          "redemptionAmount",
+          "remainingAmount"
+        ]
+      },
+      "redeemDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "assetName": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "number"
+          },
+          "id": {
+            "type": "number"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "redemptionAmount": {
+            "type": "number"
+          },
+          "remainingBalance": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "assetName",
+          "clientId",
+          "id",
+          "reason",
+          "redemptionAmount",
+          "remainingBalance"
+        ]
+      },
+      "updateClientOpportunities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "clientOpportunityId": {
+              "type": "number"
+            },
+            "opportunityId": {
+              "type": "number"
+            },
+            "isInterested": {
+              "type": "string"
+            },
+            "isScheduled": {
+              "type": "boolean"
+            },
+            "isSeen": {
+              "type": "boolean"
+            },
+            "isAddedToCart": {
+              "type": "boolean"
+            },
+            "isInvestmentPreferenceShariah": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "clientOpportunityId",
+            "opportunityId",
+            "isInterested",
+            "isScheduled",
+            "isSeen"
+          ]
+        }
+      },
+      "updateClientOpportunitiesResponse": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          }
+        }
+      },
+      "cashflow-details": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "string"
+          },
+          "ytdDistributionProjection": {
+            "type": "string"
+          },
+          "itdDistributionProjection": {
+            "type": "string"
+          },
+          "ytdCapitalCallProjection": {
+            "type": "string"
+          },
+          "yearFrom": {
+            "type": "number"
+          },
+          "yearTo": {
+            "type": "number"
+          },
+          "distributionPerTimePeriod": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timeperiod": {
+                  "type": "object",
+                  "properties": {
+                    "toDate": {
+                      "type": "string"
+                    },
+                    "year": {
+                      "type": "number"
+                    },
+                    "quarter": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "totalDistributions": {
+                  "type": "number"
+                },
+                "deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string"
+                      },
+                      "investmentVehicle": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "distribution": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "market-all": {
+        "type": "object",
+        "properties": {
+          "summaryTitle": {
+            "type": "string"
+          },
+          "summaryText": {
+            "type": "string"
+          },
+          "allMarkets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "badText": {
+                  "type": "string"
+                },
+                "goodText": {
+                  "type": "string"
+                },
+                "spectrum": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "date": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "end": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "totalCommitmentDetailsReq": {
+        "type": "object",
+        "properties": {
+          "sortBy": {
+            "type": "string"
+          },
+          "orderBy": {
+            "type": "string"
+          },
+          "filterValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "total-commitment-details": {
+        "properties": {
+          "commitments": {
+            "items": {
+              "properties": {
+                "called": {
+                  "type": "number"
+                },
+                "committed": {
+                  "type": "number"
+                },
+                "deployed": {
+                  "type": "number"
+                },
+                "holdingType": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "number"
+                },
+                "lastCommitment": {
+                  "type": "string"
+                },
+                "managedVehicle": {
+                  "type": "string"
+                },
+                "portfolioWeight": {
+                  "type": "number"
+                },
+                "strategy": {
+                  "type": "string"
+                },
+                "uncalled": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "called",
+                "committed",
+                "deployed",
+                "holdingType",
+                "id",
+                "lastCommitment",
+                "managedVehicle",
+                "portfolioWeight",
+                "strategy",
+                "uncalled"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "lastValuation": {
+            "properties": {
+              "month": {
+                "type": "number"
+              },
+              "year": {
+                "type": "number"
+              }
+            },
+            "required": ["month", "year"],
+            "type": "object"
+          },
+          "timeperiod": {
+            "properties": {
+              "toDate": {
+                "type": "string"
+              }
+            },
+            "required": ["toDate"],
+            "type": "object"
+          },
+          "totalCommitted": {
+            "type": "number"
+          },
+          "totalUncalled": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "commitments",
+          "lastValuation",
+          "timeperiod",
+          "totalCommitted",
+          "totalUncalled"
+        ],
+        "type": "object"
+      },
+      "commitmentRelatedDealReq": {
+        "type": "object",
+        "properties": {
+          "sortBy": {
+            "type": "string"
+          },
+          "orderBy": {
+            "type": "string"
+          },
+          "filterKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filterValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "commitment-related-deals": {
+        "type": "object",
+        "properties": {
+          "groupByDeals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timeperiod": {
+                  "type": "object",
+                  "properties": {
+                    "year": {
+                      "type": "number"
+                    },
+                    "quarter": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "investmentVehicle": {
+                        "type": "string"
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "investments": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "portfolioSize": {
+                              "type": "number"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "age": {
+                              "type": "number"
+                            },
+                            "industry": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "langCode": {
+                                    "type": "string"
+                                  },
+                                  "value": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "investmentVehicle": {
+                              "type": "string"
+                            },
+                            "distributionAmount": {
+                              "type": "number"
+                            },
+                            "marketValue": {
+                              "type": "number"
+                            },
+                            "bookValue": {
+                              "type": "number"
+                            },
+                            "performance": {
+                              "type": "object",
+                              "properties": {
+                                "percent": {
+                                  "type": "number"
+                                },
+                                "direction": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "holdingPeriod": {
+                              "type": "number"
+                            },
+                            "initialInvestmentDate": {
+                              "type": "string"
+                            },
+                            "priceDate": {
+                              "type": "string"
+                            },
+                            "sponsorOrPartner": {
+                              "type": "string"
+                            },
+                            "strategy": {
+                              "type": "string"
+                            },
+                            "brochure": {
+                              "type": "object",
+                              "properties": {
+                                "address": {
+                                  "type": "string"
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "largeImageURL": {
+                                  "type": "string"
+                                },
+                                "smallImage1URL": {
+                                  "type": "string"
+                                },
+                                "smallImage2URL": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "docCenter": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          }
+        }
+      },
+      "docCenter1": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "folderName": {
+            "type": "string"
+          }
+        }
+      },
+      "docCenterResponse": {
+        "properties": {
+          "data": {
+            "items": {
+              "properties": {
+                "contentType": {
+                  "type": "string"
+                },
+                "filecounts": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": ["contentType", "filecounts", "name"],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": ["data", "success"],
+        "type": "object"
+      },
+      "docCenterResponseFilesVideos": {
+        "properties": {
+          "data": {
+            "items": {
+              "properties": {
+                "contentType": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "fileWithPrefix": {
+                  "type": "string"
+                },
+                "length": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "contentType",
+                "date",
+                "fileWithPrefix",
+                "length",
+                "name",
+                "size"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": ["data", "success"],
+        "type": "object"
+      },
+      "downloadDocuments": {
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        },
+        "required": ["url", "success", "action"],
+        "type": "object"
+      },
+      "downloadDealsheet": {
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          },
+          "isBlobExists": {
+            "type": "boolean"
+          }
+        },
+        "required": ["url", "success", "isBlobExists"],
+        "type": "object"
+      },
+      "totalInvestments": {
+        "type": "object",
+        "properties": {
+          "langCode": {
+            "type": "string"
+          },
+          "sortBy": {
+            "type": "string"
+          },
+          "orderBy": {
+            "type": "string"
+          },
+          "filterKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filterValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "totalInvestmentResponse": {
+        "type": "object",
+        "properties": {
+          "lastValuationDate": {
+            "type": "string"
+          },
+          "deals": {
+            "type": "number"
+          },
+          "avgHoldingPeriod": {
+            "type": "number"
+          },
+          "pieChartData": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "y": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "regionPercentage": {
+            "type": "object",
+            "properties": {
+              "perNorthAmerica": {
+                "type": "string"
+              },
+              "perAsia": {
+                "type": "string"
+              },
+              "perEurope": {
+                "type": "string"
+              },
+              "perGlobal": {
+                "type": "string"
+              }
+            }
+          },
+          "investments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "investmentVehicle": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "portfolioSize": {
+                        "type": "number"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "age": {
+                        "type": "number"
+                      },
+                      "industry": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "langCode": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "investmentVehicle": {
+                        "type": "string"
+                      },
+                      "distributionAmount": {
+                        "type": "number"
+                      },
+                      "marketValue": {
+                        "type": "number"
+                      },
+                      "bookValue": {
+                        "type": "number"
+                      },
+                      "performance": {
+                        "type": "object",
+                        "properties": {
+                          "percent": {
+                            "type": "number"
+                          },
+                          "direction": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "holdingPeriod": {
+                        "type": "number"
+                      },
+                      "initialInvestmentDate": {
+                        "type": "string"
+                      },
+                      "priceDate": {
+                        "type": "string"
+                      },
+                      "sponsorOrPartner": {
+                        "type": "string"
+                      },
+                      "strategy": {
+                        "type": "string"
+                      },
+                      "brochure": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "number"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "largeImageURL": {
+                            "type": "string"
+                          },
+                          "smallImage1URL": {
+                            "type": "string"
+                          },
+                          "smallImage2URL": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "investmentVehicleList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "investmentListing": {
+        "type": "object",
+        "properties": {
+          "sortBy": {
+            "type": "string"
+          },
+          "orderBy": {
+            "type": "string"
+          },
+          "filterKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filterValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "investmentListingResponse": {
+        "type": "object",
+        "properties": {
+          "lastValuationDate": {
+            "type": "string"
+          },
+          "accountCreationDate": {
+            "type": "string"
+          },
+          "groupByDeals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timeperiod": {
+                  "type": "object",
+                  "properties": {
+                    "year": {
+                      "type": "number"
+                    },
+                    "quarter": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "investmentVehicle": {
+                        "type": "string"
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "investments": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "portfolioSize": {
+                              "type": "number"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "age": {
+                              "type": "number"
+                            },
+                            "industry": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "langCode": {
+                                    "type": "string"
+                                  },
+                                  "value": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "investmentVehicle": {
+                              "type": "string"
+                            },
+                            "distributionAmount": {
+                              "type": "number"
+                            },
+                            "marketValue": {
+                              "type": "number"
+                            },
+                            "bookValue": {
+                              "type": "number"
+                            },
+                            "performance": {
+                              "type": "object",
+                              "properties": {
+                                "percent": {
+                                  "type": "number"
+                                },
+                                "direction": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "holdingPeriod": {
+                              "type": "number"
+                            },
+                            "initialInvestmentDate": {
+                              "type": "string"
+                            },
+                            "priceDate": {
+                              "type": "string"
+                            },
+                            "sponsorOrPartner": {
+                              "type": "string"
+                            },
+                            "strategy": {
+                              "type": "string"
+                            },
+                            "brochure": {
+                              "type": "object",
+                              "properties": {
+                                "address": {
+                                  "type": "string"
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "largeImageURL": {
+                                  "type": "string"
+                                },
+                                "smallImage1URL": {
+                                  "type": "string"
+                                },
+                                "smallImage2URL": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "dealDetailsResponse": {
+        "properties": {
+          "inception": {
+            "properties": {
+              "quarter": {
+                "type": "number"
+              },
+              "year": {
+                "type": "number"
+              }
+            },
+            "required": ["quarter", "year"],
+            "type": "object"
+          },
+          "lastValuation": {
+            "properties": {
+              "quarter": {
+                "type": "number"
+              },
+              "year": {
+                "type": "number"
+              }
+            },
+            "required": ["quarter", "year"],
+            "type": "object"
+          },
+          "periods": {
+            "items": {
+              "properties": {
+                "bookValue": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "brochure": {
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "largeImageURL": {
+                      "type": "string"
+                    },
+                    "smallImage1URL": {
+                      "type": "string"
+                    },
+                    "smallImage2URL": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["address", "description"],
+                  "type": "object"
+                },
+                "gainsOrLosses": {
+                  "type": "number"
+                },
+                "holdingPeriod": {
+                  "type": "number"
+                },
+                "income": {
+                  "type": "number"
+                },
+                "initialFunding": {
+                  "type": "number"
+                },
+                "initialInvestmentDate": {
+                  "type": "string"
+                },
+                "marketValue": {
+                  "type": "number"
+                },
+                "multiple": {
+                  "type": "number"
+                },
+                "netChange": {
+                  "type": "number"
+                },
+                "performanceContribution": {
+                  "type": "number"
+                },
+                "priceDate": {
+                  "type": "string"
+                },
+                "returnOfCapital": {
+                  "type": "number"
+                },
+                "shares": {
+                  "type": "number"
+                },
+                "sponsorOrPartner": {
+                  "type": "string"
+                },
+                "strategy": {
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "properties": {
+                    "quarter": {
+                      "type": "number"
+                    },
+                    "year": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["quarter", "year"],
+                  "type": "object"
+                },
+                "valueEnd": {
+                  "type": "number"
+                },
+                "valueStart": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "bookValue",
+                "gainsOrLosses",
+                "income",
+                "initialFunding",
+                "marketValue",
+                "multiple",
+                "netChange",
+                "performanceContribution",
+                "returnOfCapital",
+                "shares",
+                "timeperiod",
+                "valueEnd",
+                "valueStart"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": ["inception", "lastValuation", "periods"],
+        "type": "object"
+      },
+      "portfolioActivity": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "deals": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "acitivityType": {
+                    "type": "string"
+                  },
+                  "dealName": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": ["acitivityType", "dealName", "amount"]
+              }
+            },
+            "numberOfEvents": {
+              "type": "number"
+            }
+          },
+          "required": ["date", "deals", "numberOfEvents"]
+        }
+      },
+      "insights-landing-page": {
+        "properties": {
+          "highlights": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "marketSimplified": {
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "messageAr": {
+                "type": "string"
+              },
+              "week": {
+                "type": "string"
+              },
+              "sectionTitle": {
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string"
+              },
+              "topIndices": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "indexName": {
+                      "type": "string"
+                    },
+                    "indexCode": {
+                      "type": "string"
+                    },
+                    "indexLevel": {
+                      "type": "string"
+                    },
+                    "indexWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "topStocks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stockCompany": {
+                      "type": "string"
+                    },
+                    "stockCode": {
+                      "type": "string"
+                    },
+                    "stockPrice": {
+                      "type": "number"
+                    },
+                    "stockWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "topBonds": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "bondYields": {
+                      "type": "string"
+                    },
+                    "bondMaturity": {
+                      "type": "number"
+                    },
+                    "bondStockWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "bondWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": ["inception", "lastValuation", "periods"],
+        "type": "object"
+      },
+      "glossaries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "alphabet": {
+              "type": "string"
+            },
+            "record": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "term": {
+                    "type": "string"
+                  },
+                  "definition": {
+                    "type": "string"
+                  }
+                },
+                "required": ["term", "definition"]
+              }
+            }
+          },
+          "required": ["alphabet", "record"]
+        }
+      },
+      "synthesia": {
+        "type": "object",
+        "properties": {
+          "isSourceExists": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": ["isSourceExists"]
+      },
+      "popupDetails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "flag": {
+              "type": "boolean"
+            },
+            "popupId": {
+              "type": "number"
+            },
+            "popupName": {
+              "type": "string"
+            }
+          },
+          "required": ["flag", "popupId", "popupName"]
+        }
+      },
+      "profitLossDetails": {
+        "type": "object",
+        "properties": {
+          "profitLoss": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "quarter": {
+                  "type": "string"
+                },
+                "timeperiod": {
+                  "type": "object",
+                  "properties": {
+                    "quarter": {
+                      "type": "number"
+                    },
+                    "toDate": {
+                      "type": "string"
+                    },
+                    "year": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "summary": {
+                  "type": "object",
+                  "properties": {
+                    "totalChange": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "object",
+                          "properties": {
+                            "money": {
+                              "type": "number"
+                            },
+                            "direction": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "percentChange": {
+                          "type": "object",
+                          "properties": {
+                            "percent": {
+                              "type": "number"
+                            },
+                            "direction": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "result": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "object",
+                            "properties": {
+                              "money": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "percentChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": ["results", "totalChange"]
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "holdingType": {
+                        "type": "string"
+                      },
+                      "totalChange": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "object",
+                            "properties": {
+                              "money": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "percentChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "results": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "result": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "object",
+                              "properties": {
+                                "money": {
+                                  "type": "number"
+                                },
+                                "direction": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "percentChange": {
+                              "type": "object",
+                              "properties": {
+                                "percent": {
+                                  "type": "number"
+                                },
+                                "direction": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": ["holdingType", "results", "totalChange"]
+                  }
+                }
+              },
+              "required": ["timeperiod", "summary", "results"]
+            }
+          },
+          "crrData": {
+            "type": "object",
+            "properties": {
+              "illiquidMaximumDrawdown": {
+                "type": "number"
+              },
+              "msciWorldIndexDrawdown": {
+                "type": "number"
+              }
+            },
+            "required": ["illiquidMaximumDrawdown", "msciWorldIndexDrawdown"]
+          }
+        },
+        "required": ["profitLoss", "crrData"]
+      },
+      "insightDetails": {
+        "type": "object",
+        "properties": {
+          "details": {
+            "type": "string"
+          },
+          "disclaimer": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "insightType": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "cardImage": {
+            "type": "string"
+          },
+          "bannerImage": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "publishDate": {
+            "type": "string"
+          },
+          "orderingSequence": {
+            "type": "string"
+          },
+          "estimatedDuration": {
+            "type": "string"
+          }
+        }
+      },
+      "individualInsightDetails": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "_uid": {
+                "type": "string"
+              },
+              "Title": {
+                "type": "string"
+              },
+              "Details": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "_uid": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "component": {
+                      "type": "string"
+                    },
+                    "BannerImage": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "PublishDate": {
+                      "type": "string"
+                    },
+                    "EstimatedDuration": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "Contents": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "_uid": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "component": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "CardImage": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "focus": {
+                    "type": "string",
+                    "format": "nullable"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "filename": {
+                    "type": "string"
+                  },
+                  "copyright": {
+                    "type": "string"
+                  },
+                  "fieldtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "component": {
+                "type": "string"
+              },
+              "Disclaimer": {
+                "type": "string"
+              },
+              "BannerImage": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "focus": {
+                    "type": "string",
+                    "format": "nullable"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "filename": {
+                    "type": "string"
+                  },
+                  "copyright": {
+                    "type": "string"
+                  },
+                  "fieldtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "Description": {
+                "type": "string"
+              },
+              "PublishDate": {
+                "type": "string"
+              },
+              "OrderingSequence": {
+                "type": "string"
+              },
+              "EstimatedDuration": {
+                "type": "string"
+              },
+              "client_app_content": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "_uid": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "component": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "client_app_description": {
+                "type": "string"
+              }
+            }
+          },
+          "slug": {
+            "type": "string"
+          },
+          "full_slug": {
+            "type": "string"
+          },
+          "sort_by_date": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "position": {
+            "type": "number"
+          },
+          "tag_list": {
+            "type": "array",
+            "items": {}
+          },
+          "is_startpage": {
+            "type": "boolean"
+          },
+          "parent_id": {
+            "type": "number"
+          },
+          "meta_data": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "first_published_at": {
+            "type": "string"
+          },
+          "release_id": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "lang": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "alternates": {
+            "type": "array",
+            "items": {}
+          },
+          "default_full_slug": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "translated_slugs": {
+            "type": "string",
+            "format": "nullable"
+          }
+        }
+      },
+      "insightsMarketArchiveReq": {
+        "type": "object",
+        "properties": {
+          "lang": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "currentPage": {
+            "type": "number"
+          }
+        }
+      },
+      "insightsMarketArchiveResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "pageCount": {
+              "type": "number"
+            },
+            "totalCount": {
+              "type": "number"
+            },
+            "insights": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/individualInsightDetails"
+              }
+            }
+          }
+        }
+      },
+      "topDeals": {
+        "type": "object",
+        "properties": {
+          "deals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "performanceObj": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["percent", "direction"]
+                }
+              },
+              "required": ["id", "name", "performanceObj"]
+            }
+          },
+          "valuationProgress": {
+            "type": "number"
+          }
+        },
+        "required": ["deals", "valuationProgress"]
+      },
+      "changeMandate": {
+        "type": "object",
+        "properties": {
+          "mandateId": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "changeMandateResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "getSingleOpportunity": {
+        "type": "object",
+        "properties": {
+          "opportunityId": {
+            "type": "number"
+          },
+          "clientOpportunityId": {
+            "type": "number"
+          },
+          "opportunityName": {
+            "type": "string"
+          },
+          "about": {
+            "type": "string"
+          },
+          "expectedReturn": {
+            "type": "string"
+          },
+          "expectedExitYear": {
+            "type": "string"
+          },
+          "assetClass": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "sector": {
+            "type": "string"
+          },
+          "sponsor": {
+            "type": "string"
+          },
+          "opportunityImageUrl": {
+            "type": "string"
+          },
+          "countryImageUrl": {
+            "type": "string"
+          },
+          "isShariah": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "isProgram": {
+            "type": "boolean"
+          },
+          "info": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "disclaimer": {
+            "type": "string"
+          },
+          "opportunityVideoUrl": {
+            "type": "string"
+          },
+          "isInterested": {
+            "type": "string"
+          },
+          "isScheduled": {
+            "type": "boolean"
+          },
+          "isSeen": {
+            "type": "boolean"
+          },
+          "isAddedToCart": {
+            "type": "boolean"
+          }
+        }
+      },
+      "investmentCart": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "opportunityId": {
+              "type": "number"
+            },
+            "opportunityName": {
+              "type": "string"
+            },
+            "sponsor": {
+              "type": "string"
+            },
+            "assetClass": {
+              "type": "string"
+            },
+            "assetClassAr": {
+              "type": "string"
+            },
+            "sector": {
+              "type": "string"
+            },
+            "sectorAr": {
+              "type": "string"
+            },
+            "expectedExitYear": {
+              "type": "string"
+            },
+            "expectedReturn": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "countryAr": {
+              "type": "string"
+            },
+            "isInterested": {
+              "type": "string"
+            },
+            "minimumAmount": {
+              "type": "number"
+            },
+            "maximumAmount": {
+              "type": "number"
+            },
+            "isAddedToCart": {
+              "type": "boolean"
+            },
+            "isInvestmentPreferenceShariah": {
+              "type": "boolean"
+            },
+            "isProgram": {
+              "type": "boolean"
+            },
+            "associatedConventionalDealId": {
+              "type": "number"
+            },
+            "isSeen": {
+              "type": "boolean"
+            },
+            "isScheduled": {
+              "type": "boolean"
+            },
+            "clientOpportunityId": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "detailedPerformance": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "year": {
+              "type": "string"
+            },
+            "quarter": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "detailedPerformance": {
+              "type": "object",
+              "properties": {
+                "valueStart": {
+                  "type": "number"
+                },
+                "valueEnd": {
+                  "type": "number"
+                },
+                "itdAnnualizedPercent": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "itdAnnualizedPercentPerAnnum": {
+                  "type": "number"
+                },
+                "netChangeValue": {
+                  "type": "object",
+                  "properties": {
+                    "money": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "netChangePercent": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "liquidValue": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "liquidValuePerAnnum": {
+                  "type": "number"
+                },
+                "illiquidValue": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "illiquidValuePerAnnum": {
+                  "type": "number"
+                },
+                "illiquidVintage": {
+                  "type": "object",
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    },
+                    "direction": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "illiquidVintagePerAnnum": {
+                  "type": "number"
+                },
+                "sharpeRatio": {
+                  "type": "number"
+                },
+                "riskVolatility": {
+                  "type": "number"
+                },
+                "annualizedPerformance": {
+                  "type": "number"
+                },
+                "additions": {
+                  "type": "number"
+                }
+              }
+            },
+            "monthlyPerformance": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "period": {
+                    "type": "object",
+                    "properties": {
+                      "month": {
+                        "type": "number"
+                      },
+                      "year": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "additionsOrWithdrawels": {
+                    "type": "number"
+                  },
+                  "performance": {
+                    "type": "number"
+                  },
+                  "cumulativePerformancePercent": {
+                    "type": "number"
+                  },
+                  "cumulativePerformanceValue": {
+                    "type": "number"
+                  },
+                  "netChange": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "performanceChartData": {
+              "type": "object",
+              "properties": {
+                "cumulativeData": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "periodicData": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "months": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "minMaxValue": {
+                  "type": "object",
+                  "properties": {
+                    "max": {
+                      "type": "number"
+                    },
+                    "min": {
+                      "type": "number"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "cumulativeData",
+                "periodicData",
+                "months",
+                "minMaxValue"
+              ]
+            }
+          },
+          "required": [
+            "quarter",
+            "performanceChartData",
+            "monthlyPerformance",
+            "detailedPerformance"
+          ]
+        }
+      },
+      "marketSimplified": {
+        "type": "object",
+        "properties": {
+          "watchlistResponse": {
+            "type": "object",
+            "properties": {
+              "indices": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "indexName": {
+                      "type": "string"
+                    },
+                    "indexCode": {
+                      "type": "string"
+                    },
+                    "indexLevel": {
+                      "type": "string"
+                    },
+                    "indexFXStrength": {
+                      "type": "string"
+                    },
+                    "indexWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "indexYtdChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "indexFXCurrencyCode": {
+                      "type": "string"
+                    },
+                    "indexFXValue": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "bond": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "bondYields": {
+                      "type": "string"
+                    },
+                    "bondMaturity": {
+                      "type": "number"
+                    },
+                    "flag": {
+                      "type": "string"
+                    },
+                    "bondStockWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "bondYTDChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "bondCloseChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "bondWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "unit": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "stock": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stockCompany": {
+                      "type": "string"
+                    },
+                    "stockCode": {
+                      "type": "string"
+                    },
+                    "stockPrice": {
+                      "type": "number"
+                    },
+                    "stockWeekChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "stockYTDChange": {
+                      "type": "object",
+                      "properties": {
+                        "percent": {
+                          "type": "number"
+                        },
+                        "direction": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "cardCategoriesResponse": {
+            "type": "object",
+            "properties": {
+              "stockCategories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "categoryName": {
+                      "type": "string"
+                    },
+                    "categoryNumber": {
+                      "type": "number"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "stockCompany": {
+                            "type": "string"
+                          },
+                          "stockCode": {
+                            "type": "string"
+                          },
+                          "stockPrice": {
+                            "type": "number"
+                          },
+                          "stockWeekChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "stockYTDChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "bondCategories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "categoryName": {
+                      "type": "string"
+                    },
+                    "categoryNumber": {
+                      "type": "number"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "bondYields": {
+                            "type": "string"
+                          },
+                          "bondMaturity": {
+                            "type": "number"
+                          },
+                          "flag": {
+                            "type": "string"
+                          },
+                          "bondStockWeekChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "unit": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "bondYTDChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "unit": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "bondCloseChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "unit": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "bondWeekChange": {
+                            "type": "object",
+                            "properties": {
+                              "percent": {
+                                "type": "number"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "unit": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "indexCategories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "categoryName": {
+                      "type": "string"
+                    },
+                    "categoryNumber": {
+                      "type": "number"
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "indexName": {
+                          "type": "string"
+                        },
+                        "indexCode": {
+                          "type": "string"
+                        },
+                        "indexLevel": {
+                          "type": "string"
+                        },
+                        "indexFXStrength": {
+                          "type": "string"
+                        },
+                        "indexWeekChange": {
+                          "type": "object",
+                          "properties": {
+                            "percent": {
+                              "type": "number"
+                            },
+                            "direction": {
+                              "type": "string"
+                            },
+                            "unit": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "indexYtdChange": {
+                          "type": "object",
+                          "properties": {
+                            "percent": {
+                              "type": "number"
+                            },
+                            "direction": {
+                              "type": "string"
+                            },
+                            "unit": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "indexFXCurrencyCode": {
+                          "type": "string"
+                        },
+                        "indexFXValue": {
+                          "type": "object",
+                          "properties": {
+                            "percent": {
+                              "type": "number"
+                            },
+                            "direction": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "highlightsResponse": {
+            "type": "object",
+            "properties": {
+              "highlights": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "lastEvaluationDate": {
+        "type": "object",
+        "properties": {
+          "accountCreated": {
+            "type": "string"
+          },
+          "lastValuationDate": {
+            "type": "string"
+          }
+        }
+      },
+      "portfolioOverview": {
+        "type": "object",
+        "properties": {
+          "cashFlowProjections": {
+            "type": "integer"
+          },
+          "cashflowChartValuesCapitalCall": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "cashflowChartValues": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "itdGrowth": {
+            "type": "object",
+            "properties": {
+              "percent": {
+                "type": "number"
+              },
+              "direction": {
+                "type": "string"
+              }
+            }
+          },
+          "ytdGrowth": {
+            "type": "object",
+            "properties": {
+              "percent": {
+                "type": "number"
+              },
+              "direction": {
+                "type": "string"
+              }
+            }
+          },
+          "annualizedGrowth": {
+            "type": "object",
+            "properties": {
+              "percent": {
+                "type": "number"
+              },
+              "direction": {
+                "type": "string"
+              }
+            }
+          },
+          "profitLoss": {
+            "type": "object",
+            "properties": {
+              "money": {
+                "type": "number"
+              },
+              "direction": {
+                "type": "string"
+              }
+            }
+          },
+          "profitLossChartValues": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "deals": {
+            "type": "integer"
+          },
+          "commitments": {
+            "type": "integer"
+          },
+          "commitmentChartValues": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "totalCommitmentsStartAndEndDate": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "marketSpectrumData": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              "end": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          },
+          "performanceChartValues": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "lastFourQuarters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/client/account/profile": {
+      "get": {
+        "tags": ["Account"],
+        "summary": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/profile"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/recent-activities": {
+      "get": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/recent-activities"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/performance/dashboard-performance-chart": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "langCode",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Performance"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/dashboard-performance-chart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/user": {
+      "get": {
+        "tags": ["User"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/latest-insights": {
+      "get": {
+        "tags": ["Insights"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lastest-insights"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/portfolio-summary-allocation": {
+      "get": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/portfolio-summary-allocation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/client-opportunities": {
+      "get": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/client-opportunities"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/account/dashboard-performance-metrics": {
+      "get": {
+        "tags": ["Account"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/dashboard-performance-metrics"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/meetings/calendar": {
+      "post": {
+        "tags": ["Meetings"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/calendar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/calendarResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/meetings/schedule": {
+      "post": {
+        "tags": ["Meetings"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/schedule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/scheduleReponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/miscellaneous/crr": {
+      "get": {
+        "tags": ["Miscellaneous"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/crr" },
+                    { "$ref": "#/components/schemas/crrifnonAA" }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loginResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/get-interested-opportunities": {
+      "get": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/client-opportunities"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/get-redeem-funds": {
+      "get": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/redeem-funds"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/get-redeem-details": {
+      "post": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/redeemDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/redeemDetailsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/update-client-opportunities": {
+      "patch": {
+        "tags": ["Deals"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateClientOpportunities"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updateClientOpportunitiesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/cashflow/cashflow-details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "orderBy",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Cashflow"],
+        "summary": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/cashflow-details"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/miscellaneous/market-all": {
+      "get": {
+        "tags": ["Miscellaneous"],
+        "summary": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/market-all"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/commitment/total-commitment-details": {
+      "post": {
+        "tags": ["Commitment"],
+        "summary": "",
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/totalCommitmentDetailsReq"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/total-commitment-details"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/commitment-related-deals": {
+      "post": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "spvId",
+            "schema": { "type": "number" }
+          }
+        ],
+        "tags": ["Deals"],
+        "summary": "",
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/commitmentRelatedDealReq"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/commitment-related-deals"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/documents/doc-center": {
+      "post": {
+        "tags": ["MyDocuments"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  { "$ref": "#/components/schemas/docCenter" },
+                  { "$ref": "#/components/schemas/docCenter1" }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/docCenterResponse" },
+                    {
+                      "$ref": "#/components/schemas/docCenterResponseFilesVideos"
+                    },
+                    {
+                      "$ref": "#/components/schemas/downloadDocuments"
+                    },
+                    {
+                      "$ref": "#/components/schemas/downloadDealsheet"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/investments/total-investments": {
+      "post": {
+        "tags": ["Investments"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/totalInvestments"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/totalInvestmentResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/investments/investment-listing": {
+      "post": {
+        "tags": ["Investments"],
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/investmentListing"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investmentListingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/investments/deal-details": {
+      "get": {
+        "tags": ["Investments"],
+        "summary": "Individual deal details",
+        "parameters": [
+          {
+            "name": "dealId",
+            "in": "query",
+            "description": "1",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/dealDetailsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/miscellaneous/portfolio-activity": {
+      "get": {
+        "tags": ["Miscellaneous"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/portfolioActivity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/insights-landing-page": {
+      "get": {
+        "tags": ["Insights"],
+        "summary": "Landing page of insights",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/insights-landing-page"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/miscellaneous/glossaries": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "term",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Miscellaneous"],
+        "summary": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/glossaries"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/miscellaneous/synthesia": {
+      "get": {
+        "tags": ["Miscellaneous"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/synthesia"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/getPopupDetails": {
+      "get": {
+        "tags": ["Deals"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/popupDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/profitloss/profit-loss-details": {
+      "get": {
+        "tags": ["ProfitLoss"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/profitLossDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/insights-market-archive": {
+      "post": {
+        "tags": ["Insights"],
+        "summary": "",
+        "operationId": "",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/insightsMarketArchiveReq"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/insightsMarketArchiveResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/get-insight-details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "lang",
+            "schema": { "type": "string" }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Insights"],
+        "summary": "",
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/insightDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/performance/get-top-deals": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "year",
+            "schema": { "type": "string" }
+          },
+          {
+            "in": "header",
+            "name": "quater",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Performance"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/topDeals"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/get-podcast-videos": {
+      "get": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "year",
+            "schema": { "type": "string" }
+          },
+          {
+            "in": "header",
+            "name": "quater",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Performance"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/topDeals"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/auth/changeMandate": {
+      "post": {
+        "tags": ["Auth"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changeMandate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/changeMandateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/opportunities": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "opportunityId",
+            "schema": { "type": "number" }
+          },
+          {
+            "in": "query",
+            "name": "langCode",
+            "schema": { "type": "string" }
+          }
+        ],
+        "tags": ["Deals"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getSingleOpportunity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/deals/investment-cart": {
+      "get": {
+        "tags": ["Deals"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/investmentCart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/performance/detailed-performance": {
+      "get": {
+        "tags": ["Performance"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/detailedPerformance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/insights/markets-simplified": {
+      "get": {
+        "tags": ["Insights"],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/marketSimplified"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/get-last-valuation-date": {
+      "get": {
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lastEvaluationDate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/client/account/portfolio-overview": {
+      "get": {
+        "tags": ["Account"],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "langCode",
+            "in": "query",
+            "description": "en",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/portfolioOverview"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

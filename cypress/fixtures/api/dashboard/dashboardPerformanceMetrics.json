@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "required": [
+    "totalAumValue",
+    "ytdGrowth",
+    "itdGrowth",
+    "annualizedGrowth",
+    "irrGrowth",
+    "netChangeValue"
+  ],
+  "properties": {
+    "totalAumValue": {
+      "type": "number"
+    },
+    "ytdGrowth": {
+      "type": "object",
+      "required": ["percent", "direction"],
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    },
+    "itdGrowth": {
+      "type": "object",
+      "required": ["percent", "direction"],
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    },
+    "annualizedGrowth": {
+      "type": "object",
+      "required": ["percent", "direction"],
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    },
+    "irrGrowth": {
+      "type": "object",
+      "required": ["percent", "direction"],
+      "properties": {
+        "percent": {
+          "type": "integer"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    },
+    "netChangeValue": {
+      "type": "object",
+      "required": ["money", "direction"],
+      "properties": {
+        "money": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

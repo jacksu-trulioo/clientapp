@@ -1,0 +1,23 @@
+{
+  "countryOfResidence": "BH",
+  "firstName": "eToe",
+  "lastName": "user",
+  "nationality": null,
+  "region": null,
+  "phoneCountryCode": "+91",
+  "phoneNumber": "8888888888",
+  "isDefinedSophisticatedByCMA": null,
+  "isAccreditedByCBB": null,
+  "isTaxableInUS": null,
+  "investorSurvey": {
+    "investMinimumAmount": null,
+    "whenToStartInvestment": null,
+    "interestedInvestments": [],
+    "investmentExperience": null,
+    "priorInvExperience": [],
+    "otherPriorDetails": null,
+    "otherInterestedInvDetails": null,
+    "preProposalInitialAction": "QualifyToUnlock"
+  },
+  "termsOfService": null
+}

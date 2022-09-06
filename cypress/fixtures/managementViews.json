@@ -1,0 +1,36 @@
+{
+  "page": 1,
+  "totalCount": 3,
+  "data": [
+    {
+      "insightType": "ManagementView",
+      "id": "92331754",
+      "title": "Ali Almuarik Speaks To Argaam About Managing Family Wealth",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Ali Almuarik, Deputy CEO Head of Wealth and Asset Management,",
+      "publishDate": "2021-10-10T00:00:00",
+      "estimatedDuration": "1 min"
+    },
+    {
+      "insightType": "ManagementView",
+      "id": "92325851",
+      "title": "Abdulmohsin Al Omran Speaks To Argaam About Investment Success Stories",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "In this interview with Argaam, Abdulmoshin Al Omran, Founder and CEO,",
+      "publishDate": "2021-08-29T09:00:00",
+      "estimatedDuration": "01 min"
+    },
+    {
+      "insightType": "ManagementView",
+      "id": "92303235",
+      "title": "Abdulmohsin Al Omran Speaks To Argaam About Wealth Management",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "In this interview with Argaam, Abdulmoshin Al Omran Founder and CEO, discusses wealth management",
+      "publishDate": "2021-07-11T00:00:00",
+      "estimatedDuration": "10 min"
+    }
+  ]
+}

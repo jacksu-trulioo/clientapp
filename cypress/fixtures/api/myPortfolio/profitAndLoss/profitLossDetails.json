@@ -1,0 +1,184 @@
+{
+  "$ref": "#/definitions/profitAndLoss",
+  "definitions": {
+    "profitAndLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "profitLoss": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProfitLoss"
+          }
+        },
+        "crrData": {
+          "$ref": "#/definitions/CrrData"
+        },
+        "isCRRExists": {
+          "type": "boolean"
+        }
+      },
+      "required": ["isCRRExists", "profitLoss"],
+      "title": "profitAndLoss"
+    },
+    "CrrData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "illiquidMaximumDrawdown": {
+          "type": "number"
+        },
+        "msciWorldIndexDrawdown": {
+          "type": "number"
+        }
+      },
+      "required": ["illiquidMaximumDrawdown", "msciWorldIndexDrawdown"],
+      "title": "CrrData"
+    },
+    "ProfitLoss": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quarter": {
+          "$ref": "#/definitions/Quarter"
+        },
+        "summary": {
+          "$ref": "#/definitions/Summary"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProfitLossResult"
+          }
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": ["quarter", "results", "summary"],
+      "title": "ProfitLoss"
+    },
+    "ProfitLossResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "holdingType": {
+          "type": "string"
+        },
+        "totalChange": {
+          "$ref": "#/definitions/TotalChange"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResultResultClass"
+          }
+        }
+      },
+      "required": ["holdingType", "results", "totalChange"],
+      "title": "ProfitLossResult"
+    },
+    "ResultResultClass": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/ResultEnum"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        },
+        "percentChange": {
+          "$ref": "#/definitions/PercentChange"
+        }
+      },
+      "required": ["percentChange", "result", "value"],
+      "title": "ResultResultClass"
+    },
+    "PercentChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "PercentChange"
+    },
+    "Value": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "money": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "money"],
+      "title": "Value"
+    },
+    "TotalChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Value"
+        },
+        "percentChange": {
+          "$ref": "#/definitions/PercentChange"
+        }
+      },
+      "required": ["percentChange", "value"],
+      "title": "TotalChange"
+    },
+    "Summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "totalChange": {
+          "$ref": "#/definitions/TotalChange"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResultResultClass"
+          }
+        }
+      },
+      "required": ["results", "totalChange"],
+      "title": "Summary"
+    },
+    "Quarter": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Quarter"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["neutral", "upwards", "downwards"],
+      "title": "Direction"
+    },
+    "ResultEnum": {
+      "type": "string",
+      "enum": [
+        "commissionExpenses",
+        "forexResults",
+        "incomeDistribution",
+        "marketResults"
+      ],
+      "title": "ResultEnum"
+    }
+  }
+}

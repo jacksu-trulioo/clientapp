@@ -1,0 +1,36 @@
+{
+  "$ref": "#/definitions/getRedeemFunds",
+  "definitions": {
+    "getRedeemFunds": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "redemptionFunds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RedemptionFund"
+          }
+        }
+      },
+      "required": ["redemptionFunds"],
+      "title": "getRedeemFunds"
+    },
+    "RedemptionFund": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "fundName": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "number"
+        }
+      },
+      "required": ["balance", "date", "fundName"],
+      "title": "RedemptionFund"
+    }
+  }
+}

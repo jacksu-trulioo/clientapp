@@ -1,0 +1,41 @@
+{
+  "id": "1087",
+  "title": "Project Magnum",
+  "description": "Co-investment with BlackRock and CDR in the takeover of WM Morrisons Supermarkets plc.",
+  "image": "https://via.placeholder.com/200/1A1A1A99",
+  "assetClass": "Real Estate",
+  "country": "United States",
+  "sector": "Consumer Staple",
+  "isShariahCompliant": true,
+  "sponsor": "BlackRock/Clayton, Dublier & Rice ",
+  "expectedExit": "2026",
+  "expectedReturn": "29% IRR / 1.6x MOIC",
+  "videoLink": "https://clientappmedia.s3.eu-west-1.amazonaws.com/Video/Magnum+By+Naji+%2C+TFO+ver.mp4",
+  "targetYield": "",
+  "otherInfo": [
+    {
+      "title": "High retail footprint",
+      "substances": [
+        {
+          "description": "With almost 500 supermarkets, the company owns 86% of its retail sites, which is materially above the industry average, providing additional proceeds though sale and leasebacks."
+        }
+      ]
+    },
+    {
+      "title": "Leading food retailer chain in the UK",
+      "substances": [
+        {
+          "description": "The company has a vertically integrated supply chain with 9% market share and strong brand awareness."
+        }
+      ]
+    },
+    {
+      "title": "Best-in-class, reputable management team",
+      "substances": [
+        {
+          "description": "Highly regarded team restored profitable growth since 2015."
+        }
+      ]
+    }
+  ]
+}

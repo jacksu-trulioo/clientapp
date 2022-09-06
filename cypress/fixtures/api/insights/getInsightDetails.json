@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "insightType": {
+      "type": "string"
+    },
+    "id": {
+      "type": "number"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cardImage": {
+      "type": "string"
+    },
+    "bannerImage": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publishDate": {
+      "type": "string"
+    },
+    "estimatedDuration": {
+      "type": "string"
+    },
+    "guests": {
+      "type": "array",
+      "items": {}
+    },
+    "video": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "insightType",
+    "id",
+    "title",
+    "cardImage",
+    "bannerImage",
+    "description",
+    "publishDate",
+    "estimatedDuration",
+    "guests",
+    "video"
+  ]
+}

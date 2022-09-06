@@ -1,0 +1,207 @@
+{
+  "roi": 0.945207957853071,
+  "averageIncome": 14541.660890047244,
+  "allocations": [
+    {
+      "id": "sh_capital_yielding",
+      "categorization": "Capital Yielding",
+      "percentage": 0.4,
+      "spv": "Sh. Capital Yielding",
+      "sampleDeals": [
+        {
+          "title": "Incora",
+          "country": "United States",
+          "sector": "Multifamily",
+          "component": "sample_proposal",
+          "assetClass": "Yielding",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        },
+        {
+          "title": "Project Burnham",
+          "country": "United States",
+          "sector": "Offices",
+          "component": "sample_proposal",
+          "assetClass": "Real Estate",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        },
+        {
+          "title": "Project Orange",
+          "country": "United States",
+          "sector": "Residential",
+          "component": "sample_proposal",
+          "assetClass": "Real Estate",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        },
+        {
+          "title": "Project Cabot",
+          "country": "United States",
+          "sector": "Residential",
+          "component": "sample_proposal",
+          "assetClass": "Real Estate",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        }
+      ]
+    },
+    {
+      "id": "sh_capital_growth",
+      "categorization": "Capital Growth",
+      "percentage": 0.4,
+      "spv": "Sh. Capital Growth",
+      "sampleDeals": [
+        {
+          "title": "Ramky Enrivo Engineers",
+          "country": "Europe",
+          "sector": "Media",
+          "component": "sample_proposal",
+          "assetClass": "Private Equity",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        },
+        {
+          "title": "Project Reload",
+          "country": "Germany",
+          "sector": "Financials",
+          "component": "sample_proposal",
+          "assetClass": "Private Equity",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        },
+        {
+          "title": "Barry's Add-on III",
+          "country": "Global",
+          "sector": "Financials",
+          "component": "sample_proposal",
+          "assetClass": "Private Equity",
+          "image": null,
+          "isShariahCompliant": true
+        }
+      ]
+    },
+    {
+      "id": "sh_global_credit_fund",
+      "categorization": "Opportunistic",
+      "percentage": 0.2,
+      "spv": "Sh. Global Credit Fund",
+      "sampleDeals": [
+        {
+          "title": "CLIP III",
+          "country": "United States",
+          "sector": "Financials",
+          "component": "sample_proposal",
+          "assetClass": "Private Equity",
+          "image": "https://via.placeholder.com/200/1A1A1A99",
+          "isShariahCompliant": true
+        }
+      ]
+    }
+  ],
+  "expectedReturn": 0.078,
+  "expectedYield": 0.036000000000000004,
+  "graphData": [
+    {
+      "initialInvestment": 300000,
+      "name": "Year 0",
+      "portfolioValue": 300000,
+      "relativeReturn": 0,
+      "totalValue": 300000,
+      "yieldPaidOut": 0,
+      "cumulativeYieldPaidOut": 0
+    },
+    {
+      "initialInvestment": 312600,
+      "name": "Year 1",
+      "portfolioValue": 312600,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 323400,
+      "yieldPaidOut": 10800.000000000002,
+      "cumulativeYieldPaidOut": 10800.000000000002
+    },
+    {
+      "initialInvestment": 325729.2,
+      "name": "Year 2",
+      "portfolioValue": 325729.2,
+      "relativeReturn": 0.966604823747681,
+      "totalValue": 336982.8,
+      "yieldPaidOut": 11253.600000000002,
+      "cumulativeYieldPaidOut": 22053.600000000002
+    },
+    {
+      "initialInvestment": 339409.8264,
+      "name": "Year 3",
+      "portfolioValue": 339409.8264,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 351136.0776,
+      "yieldPaidOut": 11726.251200000002,
+      "cumulativeYieldPaidOut": 33779.851200000005
+    },
+    {
+      "initialInvestment": 353665.03910880006,
+      "name": "Year 4",
+      "portfolioValue": 353665.03910880006,
+      "relativeReturn": 0.966604823747681,
+      "totalValue": 365883.79285920004,
+      "yieldPaidOut": 12218.753750400003,
+      "cumulativeYieldPaidOut": 45998.60495040001
+    },
+    {
+      "initialInvestment": 368518.97075136966,
+      "name": "Year 5",
+      "portfolioValue": 368518.97075136966,
+      "relativeReturn": 0.966604823747681,
+      "totalValue": 381250.91215928644,
+      "yieldPaidOut": 12731.941407916804,
+      "cumulativeYieldPaidOut": 58730.54635831682
+    },
+    {
+      "initialInvestment": 383996.7675229272,
+      "name": "Year 6",
+      "portfolioValue": 383996.7675229272,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 397263.4504699765,
+      "yieldPaidOut": 13266.68294704931,
+      "cumulativeYieldPaidOut": 71997.22930536613
+    },
+    {
+      "initialInvestment": 400124.6317588902,
+      "name": "Year 7",
+      "portfolioValue": 400124.6317588902,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 413948.51538971555,
+      "yieldPaidOut": 13823.883630825381,
+      "cumulativeYieldPaidOut": 85821.11293619151
+    },
+    {
+      "initialInvestment": 416929.86629276356,
+      "name": "Year 8",
+      "portfolioValue": 416929.86629276356,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 431334.35303608363,
+      "yieldPaidOut": 14404.486743320047,
+      "cumulativeYieldPaidOut": 100225.59967951155
+    },
+    {
+      "initialInvestment": 434440.9206770596,
+      "name": "Year 9",
+      "portfolioValue": 434440.9206770596,
+      "relativeReturn": 0.966604823747681,
+      "totalValue": 449450.3958635991,
+      "yieldPaidOut": 15009.47518653949,
+      "cumulativeYieldPaidOut": 115235.07486605104
+    },
+    {
+      "initialInvestment": 452687.4393454961,
+      "name": "Year 10",
+      "portfolioValue": 452687.4393454961,
+      "relativeReturn": 0.9666048237476809,
+      "totalValue": 468327.3124898703,
+      "yieldPaidOut": 15639.873144374149,
+      "cumulativeYieldPaidOut": 130874.94801042519
+    }
+  ],
+  "projectedValue": 583562.3873559213,
+  "quarterlyLiquidity": 0.2
+}

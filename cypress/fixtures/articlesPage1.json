@@ -1,0 +1,106 @@
+{
+  "page": 1,
+  "totalCount": 15,
+  "data": [
+    {
+      "insightType": "Article",
+      "id": "90532623",
+      "title": "Protecting Wealth From Inflation",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "The investment community is divided on whether inflation is more than just transitory.",
+      "publishDate": "2021-08-25T00:00:00",
+      "estimatedDuration": "2 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90387524",
+      "title": "The Merits Of Long-Term Investments",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Good things come to those who wait.",
+      "publishDate": "2021-07-19T00:00:00",
+      "estimatedDuration": "3 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90386872",
+      "title": "Invest In Your Future",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Many look at investing as a surefire way to take charge of one’s financial security.",
+      "publishDate": "2021-06-14T00:00:00",
+      "estimatedDuration": "2 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "89831801",
+      "title": "Three Compelling Benefits Of Alternative Investments",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Alternative investments are projected to increase 59% from 2018 to 2023 to a staggering US$14 trillion.",
+      "publishDate": "2020-12-22T00:00:00",
+      "estimatedDuration": "10 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90386871",
+      "title": "The Art Of Compounding Returns: How Your Wealth Can Grow Alongside Your Family",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Investing grows your wealth, especially if you reinvest your profit.",
+      "publishDate": "2020-11-16T00:00:00",
+      "estimatedDuration": "15 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90532623",
+      "title": "Protecting Wealth From Inflation",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "The investment community is divided on whether inflation is more than just transitory.",
+      "publishDate": "2021-08-25T00:00:00",
+      "estimatedDuration": "2 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90387524",
+      "title": "The Merits Of Long-Term Investments",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Good things come to those who wait.",
+      "publishDate": "2021-07-19T00:00:00",
+      "estimatedDuration": "3 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90386872",
+      "title": "Invest In Your Future",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Many look at investing as a surefire way to take charge of one’s financial security.",
+      "publishDate": "2021-06-14T00:00:00",
+      "estimatedDuration": "2 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "89831801",
+      "title": "Three Compelling Benefits Of Alternative Investments",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Alternative investments are projected to increase 59% from 2018 to 2023 to a staggering US$14 trillion.",
+      "publishDate": "2020-12-22T00:00:00",
+      "estimatedDuration": "10 min"
+    },
+    {
+      "insightType": "Article",
+      "id": "90386871",
+      "title": "The Art Of Compounding Returns: How Your Wealth Can Grow Alongside Your Family",
+      "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+      "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+      "description": "Investing grows your wealth, especially if you reinvest your profit.",
+      "publishDate": "2020-11-16T00:00:00",
+      "estimatedDuration": "15 min"
+    }
+  ]
+}

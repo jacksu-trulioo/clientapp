@@ -1,0 +1,150 @@
+[
+  {
+    "type": "Growth",
+    "instanceId": "2364",
+    "expectedReturn": "0.07366666666666667",
+    "expectedYield": "0.050833333333333335",
+    "forecastedVolatility": "0.154",
+    "sharpeRatio": "0.42900432900432905",
+    "totalCommitted": "11000000",
+    "strategies": {
+      "capitalGrowth": {
+        "percentageAllocation": 0.4666666666666667,
+        "deploymentYears": [113333, 56667, 0]
+      },
+      "capitalYielding": {
+        "percentageAllocation": 0.2,
+        "deploymentYears": [39998, 20000, 0]
+      },
+      "opportunistic": {
+        "percentageAllocation": 0.2333333333333333,
+        "deploymentYears": [60000, 0, 0]
+      },
+      "absoluteReturn": {
+        "percentageAllocation": 0.1,
+        "deploymentYears": [10000, 0, 0]
+      }
+    },
+    "earnings": [
+      {
+        "year": 2023,
+        "income": 7883,
+        "capital": 0,
+        "total": 7883,
+        "cumulativeDistribution": 7883,
+        "percentage": 3
+      },
+      {
+        "year": 2024,
+        "income": 13408,
+        "capital": 0,
+        "total": 13408,
+        "cumulativeDistribution": 21291,
+        "percentage": 7
+      },
+      {
+        "year": 2025,
+        "income": 15250,
+        "capital": 70000,
+        "total": 85250,
+        "cumulativeDistribution": 106541,
+        "percentage": 36
+      },
+      {
+        "year": 2026,
+        "income": 11050,
+        "capital": 0,
+        "total": 11050,
+        "cumulativeDistribution": 117591,
+        "percentage": 39
+      },
+      {
+        "year": 2027,
+        "income": 11050,
+        "capital": 180616,
+        "total": 191666,
+        "cumulativeDistribution": 309257,
+        "percentage": 103
+      },
+      {
+        "year": 2028,
+        "income": 3683,
+        "capital": 90308,
+        "total": 93991,
+        "cumulativeDistribution": 403248,
+        "percentage": 134
+      },
+      {
+        "year": 2029,
+        "income": 0,
+        "capital": 0,
+        "total": 0,
+        "cumulativeDistribution": 403248,
+        "percentage": 134
+      },
+      {
+        "year": 2030,
+        "income": 62325,
+        "capital": 340923,
+        "total": 403248,
+        "cumulativeDistribution": 806496,
+        "percentage": 269
+      }
+    ],
+    "graphData": [
+      {
+        "name": "1",
+        "capitalGrowth": 39998,
+        "capitalYielding": 113333,
+        "opportunistic": 60000,
+        "absoluteReturn": 10000
+      },
+      {
+        "name": "2",
+        "capitalGrowth": 20000,
+        "capitalYielding": 56667,
+        "opportunistic": 0,
+        "absoluteReturn": 0
+      },
+      {
+        "name": "3",
+        "capitalGrowth": 0,
+        "capitalYielding": 0,
+        "opportunistic": 0,
+        "absoluteReturn": 0
+      }
+    ],
+    "transformedStrategiesData": [
+      {
+        "years": [113333, 56667, 0],
+        "totalAmount": 170000,
+        "percentageAllocation": 0.4666666666666667,
+        "name": "capitalGrowth"
+      },
+      {
+        "years": [39998, 20000, 0],
+        "totalAmount": 59998,
+        "percentageAllocation": 0.2,
+        "name": "capitalYielding"
+      },
+      {
+        "years": [60000, 0, 0],
+        "totalAmount": 60000,
+        "percentageAllocation": 0.2333333333333333,
+        "name": "opportunistic"
+      },
+      {
+        "years": [10000, 0, 0],
+        "totalAmount": 10000,
+        "percentageAllocation": 0.1,
+        "name": "absoluteReturn"
+      },
+      {
+        "name": "total",
+        "totalAmount": 299998,
+        "percentageAllocation": 0.9999999999999999,
+        "years": [223331, 76667, 0]
+      }
+    ]
+  }
+]

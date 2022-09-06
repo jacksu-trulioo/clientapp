@@ -1,0 +1,22 @@
+[
+  {
+    "insightType": "QuarterlyReview",
+    "id": "93612587",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "publishDate": "2021-12-15T00:54:00",
+    "estimatedDuration": "12 min"
+  },
+  {
+    "insightType": "QuarterlyReview",
+    "id": "93612586",
+    "title": "Title Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+    "publishDate": "2021-12-09T00:00:00",
+    "estimatedDuration": "15 min"
+  }
+]

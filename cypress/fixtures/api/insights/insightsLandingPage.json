@@ -1,0 +1,194 @@
+{
+  "$ref": "#/definitions/marketSimplifiedData",
+  "definitions": {
+    "marketSimplifiedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marketSimplified": {
+          "$ref": "#/definitions/MarketSimplified"
+        }
+      },
+      "required": ["highlights", "marketSimplified"],
+      "title": "marketSimplifiedData"
+    },
+    "MarketSimplified": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "messageAr": {
+          "type": "string"
+        },
+        "week": {
+          "type": "string"
+        },
+        "sectionTitle": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "topIndices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopIndex"
+          }
+        },
+        "topStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStock"
+          }
+        },
+        "topBonds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopBond"
+          }
+        }
+      },
+      "required": [
+        "message",
+        "messageAr",
+        "sectionTitle",
+        "timestamp",
+        "topBonds",
+        "topIndices",
+        "topStocks",
+        "week"
+      ],
+      "title": "MarketSimplified"
+    },
+    "TopBond": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bondYields": {
+          "type": "string"
+        },
+        "bondMaturity": {
+          "type": "integer"
+        },
+        "bondStockWeekChange": {
+          "$ref": "#/definitions/WeekChange"
+        },
+        "bondWeekChange": {
+          "$ref": "#/definitions/WeekChange"
+        }
+      },
+      "required": [
+        "bondMaturity",
+        "bondStockWeekChange",
+        "bondWeekChange",
+        "bondYields"
+      ],
+      "title": "TopBond"
+    },
+    "WeekChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        },
+        "unit": {
+          "$ref": "#/definitions/UnitUnion"
+        }
+      },
+      "required": ["direction", "percent", "unit"],
+      "title": "WeekChange"
+    },
+    "TopIndex": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "indexName": {
+          "type": "string"
+        },
+        "indexCode": {
+          "type": "string"
+        },
+        "indexLevel": {
+          "type": "string"
+        },
+        "indexWeekChange": {
+          "$ref": "#/definitions/WeekChange"
+        }
+      },
+      "required": ["indexCode", "indexLevel", "indexName", "indexWeekChange"],
+      "title": "TopIndex"
+    },
+    "TopStock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stockCompany": {
+          "type": "string"
+        },
+        "stockCode": {
+          "type": "string"
+        },
+        "stockPrice": {
+          "type": "number"
+        },
+        "stockWeekChange": {
+          "$ref": "#/definitions/StockWeekChange"
+        }
+      },
+      "required": [
+        "stockCode",
+        "stockCompany",
+        "stockPrice",
+        "stockWeekChange"
+      ],
+      "title": "TopStock"
+    },
+    "StockWeekChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "StockWeekChange"
+    },
+    "UnitUnion": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/UnitEnum"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "UnitUnion"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["upwards", "downwards"],
+      "title": "Direction"
+    },
+    "UnitEnum": {
+      "type": "string",
+      "enum": ["", "BPS"],
+      "title": "UnitEnum"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/interestedDeals"
+  },
+  "definitions": {
+    "interestedDeals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "opportunityId": {
+          "type": "integer"
+        },
+        "opportunityName": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "expectedReturn": {
+          "type": "string"
+        },
+        "expectedExitYear": {
+          "type": "string"
+        },
+        "assetClass": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "sponsor": {
+          "type": "string"
+        },
+        "opportunityImageUrl": {
+          "type": "string"
+        },
+        "countryImageUrl": {
+          "type": "string"
+        },
+        "isShariah": {
+          "type": "integer"
+        },
+        "isProgram": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "about",
+        "assetClass",
+        "country",
+        "countryImageUrl",
+        "expectedExitYear",
+        "expectedReturn",
+        "isProgram",
+        "isShariah",
+        "opportunityId",
+        "opportunityImageUrl",
+        "opportunityName",
+        "sector",
+        "sponsor"
+      ],
+      "title": "interestedDeals"
+    }
+  }
+}

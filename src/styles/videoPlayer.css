@@ -1,0 +1,64 @@
+.video-player-container .video-js * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.video-player-container .video-js .vjs-slider:focus,
+.video-player-container .video-js .vjs-control:focus:before,
+.video-player-container .video-js .vjs-control:hover:before,
+.video-player-container .video-js .vjs-control:focus,
+.video-player-container .video-js .vjs-tech,
+video::-webkit-media-controls-overlay-enclosure,
+video:focus-visible,
+.video-player-container .video-js .vjs-control {
+  outline: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.video-player-container .video-js .vjs-big-play-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--chakra-space-52);
+  line-height: 1em;
+  height: 1em;
+  width: 2em;
+}
+
+.video-player-container .video-js:hover .vjs-big-play-button,
+.video-player-container .video-js .vjs-big-play-button:focus {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.video-player-container .video-js .vjs-time-control {
+  font-family: var(--chakra-fonts-body);
+}
+
+@media (max-width: 1200px) {
+  .video-player-container .video-js .vjs-big-play-button {
+    font-size: var(--chakra-space-40);
+  }
+}
+
+@media (max-width: 767px) {
+  .video-player-container .video-js .vjs-big-play-button {
+    font-size: var(--chakra-space-28);
+  }
+}
+
+@media (max-width: 425px) {
+  .video-player-container .video-js .vjs-big-play-button {
+    font-size: var(--chakra-space-20);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "appointmentId": "<virutal-appointment-id>",
+  "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_<meeting-id-&-meeting-link>",
+  "clientEventId": "<virtual-client-event-id>",
+  "rmEventId": "<virtual-rm-event-id>"
+}

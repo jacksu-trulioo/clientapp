@@ -1,0 +1,29 @@
+{
+  "userId": "2763c4a5-140a-4021-7fe8-08d9a34dcb81",
+  "status": "ACTIVE",
+  "email": "e2e_user@tfoco.com",
+  "emailVerified": true,
+  "profile": {
+    "countryOfResidence": "BH",
+    "firstName": "eToe",
+    "lastName": "user",
+    "nationality": "BD",
+    "region": null,
+    "phoneCountryCode": "+91",
+    "phoneNumber": "8888888888",
+    "isDefinedSophisticatedByCMA": null,
+    "isAccreditedByCBB": true,
+    "investorSurvey": {
+      "investMinimumAmount": true,
+      "whenToStartInvestment": "ThisMonth",
+      "interestedInvestments": ["RealEstates", "PrivateDebt"],
+      "investmentExperience": "FiveToTen",
+      "priorInvExperience": ["RealEstates", "PrivateDebt", "PrivateEquity"],
+      "otherPriorDetails": null,
+      "otherInterestedInvDetails": null
+    },
+    "isTaxableInUS": false,
+    "preProposalInitialAction": "QualifyToUnlock"
+  },
+  "termsOfService": null
+}

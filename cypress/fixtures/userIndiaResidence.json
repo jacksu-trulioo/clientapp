@@ -1,0 +1,21 @@
+{
+  "userId": "2763c4a5-140a-4021-7fe8-08d9a34dcb81",
+  "status": "ACTIVE",
+  "email": "e2e_user@tfoco.com",
+  "emailVerified": true,
+  "profile": {
+    "countryOfResidence": "IN",
+    "firstName": "eToe",
+    "lastName": "user",
+    "nationality": "BH",
+    "region": null,
+    "phoneCountryCode": "+91",
+    "phoneNumber": "8888888888",
+    "isDefinedSophisticatedByCMA": null,
+    "isAccreditedByCBB": null,
+    "investorSurvey": null,
+    "isTaxableInUS": null,
+    "preProposalInitialAction": null
+  },
+  "termsOfService": null
+}

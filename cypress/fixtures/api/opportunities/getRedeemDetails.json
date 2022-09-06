@@ -1,0 +1,49 @@
+{
+  "$ref": "#/definitions/redeemDetails",
+  "definitions": {
+    "redeemDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "redemptionSavedClientAppDB": {
+          "$ref": "#/definitions/RedemptionSavedClientAppDB"
+        }
+      },
+      "required": ["redemptionSavedClientAppDB"],
+      "title": "redeemDetails"
+    },
+    "RedemptionSavedClientAppDB": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "clientId": {
+          "type": "integer"
+        },
+        "assetName": {
+          "type": "string"
+        },
+        "redemptionAmount": {
+          "type": "integer"
+        },
+        "remainingBalance": {
+          "type": "integer"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "assetName",
+        "clientId",
+        "id",
+        "reason",
+        "redemptionAmount",
+        "remainingBalance"
+      ],
+      "title": "RedemptionSavedClientAppDB"
+    }
+  }
+}

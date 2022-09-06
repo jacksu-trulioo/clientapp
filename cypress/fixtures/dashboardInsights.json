@@ -1,0 +1,32 @@
+[
+  {
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Reiciendis voluptatem iste facere dolorem sit dolore aut corporis autem.\nVel possimus id unde voluptate.",
+    "estimatedDuration": "20 min",
+    "id": "29ac1611-5082-4836-9970-b94d88d5d4cc",
+    "insightType": "Webinar",
+    "publishDate": "Wed Jun 08 2022",
+    "title": "Non asperiores sint sed quidem eveniet."
+  },
+  {
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Est aspernatur sed quis aliquam consequatur animi perspiciatis a.\nDolores sit quos atque autem velit voluptas nesciunt quidem.",
+    "estimatedDuration": "10 min",
+    "id": "d99265ec-2749-4a22-a13f-257e7efa8657",
+    "insightType": "Webinar",
+    "publishDate": "Sun Jun 05 2022",
+    "title": "Dolores voluptatem ipsa est magni facilis."
+  },
+  {
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Aperiam officia quia nesciunt necessitatibus aut qui quis hic.\nIusto quos minima qui dolor excepturi nulla sapiente alias similique.",
+    "estimatedDuration": "10 min",
+    "id": "b51c4acb-62c0-4357-9570-1b87a4a63f56",
+    "insightType": "Webinar",
+    "publishDate": "Sun Aug 14 2022",
+    "title": "Sed consequuntur mollitia et voluptatibus omnis."
+  }
+]

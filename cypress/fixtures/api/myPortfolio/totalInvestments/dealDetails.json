@@ -1,0 +1,148 @@
+{
+  "$ref": "#/definitions/dealDetails",
+  "definitions": {
+    "dealDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inception": {
+          "$ref": "#/definitions/Inception"
+        },
+        "lastValuation": {
+          "$ref": "#/definitions/Inception"
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Period"
+          }
+        }
+      },
+      "required": ["inception", "lastValuation", "periods"],
+      "title": "dealDetails"
+    },
+    "Inception": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "quarter": {
+          "type": "integer"
+        }
+      },
+      "required": ["quarter", "year"],
+      "title": "Inception"
+    },
+    "Period": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "timeperiod": {
+          "$ref": "#/definitions/Inception"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "marketValue": {
+          "type": "number"
+        },
+        "initialFunding": {
+          "type": "number"
+        },
+        "shares": {
+          "type": "integer"
+        },
+        "performanceContribution": {
+          "type": "number"
+        },
+        "multiple": {
+          "type": "number"
+        },
+        "netChange": {
+          "type": "number"
+        },
+        "valueStart": {
+          "type": "number"
+        },
+        "valueEnd": {
+          "type": "number"
+        },
+        "returnOfCapital": {
+          "type": "number"
+        },
+        "gainsOrLosses": {
+          "type": "number"
+        },
+        "income": {
+          "type": "number"
+        },
+        "holdingPeriod": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "initialInvestmentDate": {
+          "type": "string"
+        },
+        "priceDate": {
+          "type": "string"
+        },
+        "sponsorOrPartner": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        },
+        "brochure": {
+          "$ref": "#/definitions/Brochure"
+        }
+      },
+      "required": [
+        "bookValue",
+        "brochure",
+        "gainsOrLosses",
+        "holdingPeriod",
+        "income",
+        "initialFunding",
+        "initialInvestmentDate",
+        "marketValue",
+        "multiple",
+        "name",
+        "netChange",
+        "performanceContribution",
+        "priceDate",
+        "returnOfCapital",
+        "shares",
+        "sponsorOrPartner",
+        "strategy",
+        "timeperiod",
+        "valueEnd",
+        "valueStart"
+      ],
+      "title": "Period"
+    },
+    "Brochure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "largeImageURL": {
+          "type": "string"
+        },
+        "smallImage1URL": {
+          "type": "string"
+        }
+      },
+      "required": ["address", "description", "largeImageURL", "smallImage1URL"],
+      "title": "Brochure"
+    }
+  }
+}

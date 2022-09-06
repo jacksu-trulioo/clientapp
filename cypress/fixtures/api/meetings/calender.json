@@ -1,0 +1,88 @@
+{
+  "$ref": "#/definitions/Welcome5",
+  "definitions": {
+    "Welcome5": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schedules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Schedule"
+          }
+        }
+      },
+      "required": ["schedules"],
+      "title": "Welcome5"
+    },
+    "Schedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "hasFreeHour": {
+          "type": "boolean"
+        },
+        "hours": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hour"
+          }
+        }
+      },
+      "required": ["date", "hasFreeHour", "hours"],
+      "title": "Schedule"
+    },
+    "Hour": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "$ref": "#/definitions/Time"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "rawTime": {
+          "type": "string"
+        }
+      },
+      "required": ["available", "rawTime", "status", "time"],
+      "title": "Hour"
+    },
+    "Status": {
+      "type": "string",
+      "enum": ["Free"],
+      "title": "Status"
+    },
+    "Time": {
+      "type": "string",
+      "enum": [
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "02:30 PM",
+        "03:00 PM",
+        "03:30 PM",
+        "04:00 PM",
+        "04:30 PM",
+        "05:00 PM",
+        "10:30 AM",
+        "08:30 AM",
+        "09:00 AM",
+        "09:30 AM",
+        "10:00 AM",
+        "01:00 PM",
+        "01:30 PM",
+        "02:00 PM"
+      ],
+      "title": "Time"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$ref": "#/definitions/clientOpportunities",
+  "definitions": {
+    "clientOpportunities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "msg": {
+          "type": "string"
+        }
+      },
+      "required": ["msg"],
+      "title": "clientOpportunities"
+    }
+  }
+}

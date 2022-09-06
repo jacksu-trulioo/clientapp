@@ -1,0 +1,33 @@
+{
+  "title": null,
+  "firstName": "English First Name",
+  "middleName": "English Second name",
+  "lastName": "English Last name",
+  "gender": "Male",
+  "dateOfBirth": "1956-05-15T00:00:00",
+  "countryOfBirth": null,
+  "placeOfBirth": null,
+  "nationality": "SA",
+  "otherNationality": null,
+  "address1": {
+    "address": null,
+    "buildingNumber": "1128",
+    "streetName": "Prince Musaid",
+    "district": "Al Khubar Ash Shamaliyah Dist.",
+    "city": "AL KHOBAR",
+    "postcode": "34425",
+    "country": "SA"
+  },
+  "hasResidenceAddressOutsideSaudiArabia": null,
+  "address2": null,
+  "nationalIdNumber": "1086277934",
+  "passportNumber": null,
+  "isAbsher": true,
+  "employmentActivity": null,
+  "employmentDetails": null,
+  "employerDetails": null,
+  "incomeDetails": null,
+  "taxInformation": null,
+  "reasonablenessCheck": null,
+  "pepCheck": null
+}

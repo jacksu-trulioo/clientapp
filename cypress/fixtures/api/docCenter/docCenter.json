@@ -1,0 +1,39 @@
+{
+  "$ref": "#/definitions/docCenter",
+  "definitions": {
+    "docCenter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data"
+          }
+        }
+      },
+      "required": ["data", "success"],
+      "title": "docCenter"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "filecounts": {
+          "type": "integer"
+        },
+        "contentType": {
+          "type": "string"
+        }
+      },
+      "required": ["contentType", "filecounts", "name"],
+      "title": "Data"
+    }
+  }
+}

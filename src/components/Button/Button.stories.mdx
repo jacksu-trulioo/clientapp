@@ -1,0 +1,260 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs"
+
+import { Button, ButtonGroup, IconButton, Stack } from "@chakra-ui/react"
+import { FaFacebook, FaTwitter } from "react-icons/fa"
+import { IoAdd, IoArrowForward, IoMail } from "react-icons/io5"
+
+import { StarIcon } from "~/components"
+
+<Meta
+  title="Basics/Button"
+  component={Button}
+  argTypes={{
+    colorScheme: {
+      name: "colorScheme",
+      type: { summary: "string" },
+      description:
+        "The color theme of the button. You can set the value to `primary` or `secondary`.",
+      options: ["primary", "secondary"],
+      control: "inline-radio",
+    },
+    variant: {
+      name: "variant",
+      type: { summary: "string" },
+      description:
+        "Use the variant prop to change the visual style of the Button. You can set the value to `solid`, `ghost`, `outline`, or `link`.",
+      options: ["solid", "outline", "ghost", "link"],
+      control: "inline-radio",
+    },
+    size: {
+      name: "size",
+      type: { summary: "string" },
+      description:
+        "Use the size prop to change the size of the button. You can set the value to `xs`, `sm`, `md`, or `lg`.",
+      options: ["xs", "sm", "md", "lg"],
+      control: "inline-radio",
+    },
+    isLoading: {
+      name: "isLoading",
+      type: { summary: "boolean" },
+      defaultValue: false,
+      description: "If `true`, the button will show a spinner.",
+      control: "boolean",
+    },
+    isActive: {
+      name: "isActive",
+      type: { summary: "boolean" },
+      defaultValue: false,
+      description: "If `true`, the button will be styled in its active state.",
+      control: "boolean",
+    },
+    isDisabled: {
+      name: "isDisabled",
+      type: { summary: "boolean" },
+      defaultValue: false,
+      description: "If `true`, the button will be disabled.",
+      control: "boolean",
+    },
+    loadingText: {
+      name: "loadingText",
+      type: { summary: "string" },
+      description:
+        "The label to show in the button when `isLoading` is true. If no text is passed, it only shows the spinner.",
+      control: "text",
+    },
+    isFullWidth: {
+      name: "isFullWidth",
+      type: { summary: "boolean" },
+      defaultValue: false,
+      description:
+        "If `true`, the button will take up the full width of its container.",
+      control: "boolean",
+    },
+    leftIcon: {
+      name: "leftIcon",
+      type: { summary: "React.ReactElement" },
+      description:
+        "If added, the button will show an icon before the button's label.",
+      options: ["Star", "Mail", "ArrowForward"],
+      control: "select",
+      mapping: {
+        Star: <StarIcon />,
+        Mail: <IoMail />,
+        ArrowForward: <IoArrowForward />,
+      },
+    },
+    rightIcon: {
+      name: "rightIcon",
+      type: { summary: "React.ReactElement" },
+      description:
+        "If added, the button will show an icon after the button's label.",
+      options: ["Star", "Mail", "ArrowForward"],
+      control: "select",
+      mapping: {
+        Star: <StarIcon />,
+        Mail: <IoMail />,
+        ArrowForward: <IoArrowForward />,
+      },
+    },
+    iconSpacing: {
+      name: "iconSpacing",
+      type: "number",
+      description: "The space between the button icon and label.",
+      control: "number",
+    },
+    spinner: {
+      name: "spinner",
+      type: { summary: "React.ReactElement" },
+      description:
+        "Replace the spinner component when `isLoading` is set to `true`.",
+      control: "select",
+      options: ["Custom"],
+      mapping: {
+        Custom: "Custom Spinner",
+      },
+    },
+    spinnerPlacement: {
+      name: "spinnerPlacement",
+      type: { summary: "string" },
+      description:
+        "It determines the placement of the spinner when isLoading is true.",
+      control: "inline-radio",
+      options: ["start", "end"],
+    },
+  }}
+/>
+
+# Button
+
+The `Button` component is used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+
+<Canvas>
+  <Story name="Default">{(args) => <Button {...args}>Button</Button>}</Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## Button sizes
+
+Use the `size` prop to change the size of the button. You can set the value to `xs`, `sm`, `md`, or `lg`.
+
+<Canvas>
+  <Story name="Button sizes">
+    {({ colorScheme = "primary", ...rest }) => (
+      <Stack spacing={4} direction="row" align="center">
+        <Button size="xs" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button size="sm" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button size="md" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button size="lg" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+      </Stack>
+    )}
+  </Story>
+</Canvas>
+
+## Button variants
+
+Use the `variant` prop to change the visual style of the Button. You can set the value to `solid`, `ghost`, `outline`, or `link`.
+
+<Canvas>
+  <Story name="Button variants">
+    {({ colorScheme = "primary", ...rest }) => (
+      <Stack spacing={4} direction="row" align="center">
+        <Button variant="solid" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button variant="outline" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button variant="ghost" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+        <Button variant="link" colorScheme={colorScheme} {...rest}>
+          Button
+        </Button>
+      </Stack>
+    )}
+  </Story>
+</Canvas>
+
+## Button with icon
+
+You can add left and right icons to the Button component using the `leftIcon` and `rightIcon` props respectively.
+
+> Note: The `leftIcon` and `rightIcon` prop values should be react elements NOT strings.
+
+<Canvas>
+  <Story name="Button with icon">
+    <Stack spacing={4} direction="row" align="center">
+      <Button leftIcon={<IoMail />} colorScheme="primary" variant="solid">
+        Email
+      </Button>
+      <Button
+        rightIcon={<IoArrowForward />}
+        colorScheme="secondary"
+        variant="outline"
+      >
+        Call us
+      </Button>
+    </Stack>
+  </Story>
+</Canvas>
+
+## Button loading state
+
+Pass the `isLoading` prop to show its loading state. By default, the button will show a spinner and leave the button's width unchanged.
+
+You can also pass the `loadingText` prop to show a spinner and the loading text.
+
+<Canvas>
+  <Story name="Button loading state">
+    <Stack spacing={4} direction="row" align="center">
+      <Button isLoading colorScheme="primary" variant="solid">
+        Email
+      </Button>
+      <Button
+        isLoading
+        loadingText="Submitting"
+        colorScheme="secondary"
+        variant="outline"
+      >
+        Submit
+      </Button>
+    </Stack>
+  </Story>
+</Canvas>
+
+## Grouping buttons
+
+You can use the `Stack` or `ButtonGroup` component to group buttons. When you use the `ButtonGroup` component, it allows you to:
+
+- Set the `size` and `variant` of all buttons within it.
+- Add `spacing` between the buttons.
+- Flush the buttons together by removing the border radius of the its children as needed.
+
+<Canvas>
+  <Story name="Grouping buttons">
+    <ButtonGroup variant="outline" spacing="6">
+      <Button colorScheme="primary">Save</Button>
+      <Button>Cancel</Button>
+    </ButtonGroup>
+  </Story>
+</Canvas>
+
+To flush the buttons, pass the `isAttached` prop.
+
+<Canvas>
+  <Story name="Attached button">
+    <ButtonGroup size="sm" isAttached variant="outline">
+      <Button mr="-px">Save</Button>
+      <IconButton aria-label="Add to friends" icon={<IoAdd />} />
+    </ButtonGroup>
+  </Story>
+</Canvas>

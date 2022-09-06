@@ -1,0 +1,62 @@
+import { Button } from "@chakra-ui/button"
+import { Stack } from "@chakra-ui/layout"
+import { useBreakpointValue } from "@chakra-ui/media-query"
+import { Portal } from "@chakra-ui/portal"
+import { FormikProps } from "formik"
+import useTranslation from "next-translate/useTranslation"
+import React from "react"
+
+import { KycPersonalInformation } from "~/services/mytfo/types"
+
+import { useKycPersonalInformationFormContext } from "./KycPersonalInformationFormContext"
+
+interface KycPersonalInformationFormActions
+  extends FormikProps<KycPersonalInformation> {}
+
+const KycPersonalInformationFormActions = React.forwardRef<
+  HTMLDivElement,
+  KycPersonalInformationFormActions
+>(function KycPersonalInformationFormActions(props, ref) {
+  const { submitForm, isSubmitting } = props
+  const { isFirstPage, previousPage } = useKycPersonalInformationFormContext()
+  const { t } = useTranslation()
+  const isFullWidth = useBreakpointValue({ base: true, md: false })
+
+  return (
+    <Portal containerRef={ref as React.RefObject<HTMLDivElement>}>
+      <Stack
+        isInline
+        spacing={{ base: 4, md: 8 }}
+        px={{ base: 0, md: 3 }}
+        flex="1"
+        justifyContent="flex-end"
+      >
+        {!isFirstPage && (
+          <Button
+            colorScheme="primary"
+            variant="outline"
+            minW={{ base: "auto", md: "110px" }}
+            onClick={previousPage}
+            isFullWidth={isFullWidth}
+          >
+            {t("common:button.back")}
+          </Button>
+        )}
+
+        <Button
+          colorScheme="primary"
+          minW={{ base: "auto", md: "110px" }}
+          type="submit"
+          onClick={submitForm}
+          isLoading={isSubmitting}
+          loadingText={t("common:button.next")}
+          isFullWidth={isFullWidth}
+        >
+          {t("common:button.next")}
+        </Button>
+      </Stack>
+    </Portal>
+  )
+})
+
+export default React.memo(KycPersonalInformationFormActions)

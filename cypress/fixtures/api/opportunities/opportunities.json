@@ -1,0 +1,147 @@
+{
+  "$ref": "#/definitions/opportunities",
+  "definitions": {
+    "opportunities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        },
+        "filterValues": {
+          "$ref": "#/definitions/FilterValues"
+        }
+      },
+      "required": ["data", "filterValues"],
+      "title": "opportunities"
+    },
+    "Datum": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "opportunityId": {
+          "type": "integer"
+        },
+        "opportunityName": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "expectedReturn": {
+          "type": "string"
+        },
+        "expectedExitYear": {
+          "type": "string"
+        },
+        "assetClass": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "sponsor": {
+          "type": "string"
+        },
+        "opportunityImageUrl": {
+          "type": "string"
+        },
+        "countryImageUrl": {
+          "type": "string"
+        },
+        "isShariah": {
+          "type": "integer"
+        },
+        "isProgram": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "assetClass",
+        "country",
+        "countryImageUrl",
+        "expectedExitYear",
+        "expectedReturn",
+        "isProgram",
+        "isShariah",
+        "opportunityId",
+        "opportunityImageUrl",
+        "opportunityName",
+        "sector",
+        "sponsor"
+      ],
+      "title": "Datum"
+    },
+    "FilterValues": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sponsor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sponsor"
+          }
+        },
+        "assetClass": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssetClass"
+          }
+        },
+        "sector": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sector"
+          }
+        }
+      },
+      "required": ["assetClass", "sector", "sponsor"],
+      "title": "FilterValues"
+    },
+    "AssetClass": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assetClass": {
+          "type": "string"
+        },
+        "assetClassAr": {
+          "type": "string"
+        }
+      },
+      "required": ["assetClass"],
+      "title": "AssetClass"
+    },
+    "Sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sector": {
+          "type": "string"
+        },
+        "sectorAr": {
+          "type": "string"
+        }
+      },
+      "required": ["sector"],
+      "title": "Sector"
+    },
+    "Sponsor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sponsor": {
+          "type": "string"
+        }
+      },
+      "required": ["sponsor"],
+      "title": "Sponsor"
+    }
+  }
+}

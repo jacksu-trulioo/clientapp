@@ -1,0 +1,15 @@
+{
+  "whoIsPortfolioFor": null,
+  "whoIsPortfolioForOtherDetails": null,
+  "investmentGoals": null,
+  "shouldGenerateIncome": null,
+  "investmentDurationInYears": null,
+  "investmentAmountInUSD": null,
+  "topUpInvestmentAnnually": null,
+  "annualInvestmentTopUpAmountInUSD": null,
+  "excludedAssets": null,
+  "additionalPreferences": null,
+  "additionalPreferenceOtherDetails": null,
+  "desiredAnnualIncome": null,
+  "esgCompliant": null
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": ["accountCreated", "lastValuationDate"],
+  "properties": {
+    "accountCreated": {
+      "type": "string"
+    },
+    "lastValuationDate": {
+      "type": "string"
+    }
+  }
+}

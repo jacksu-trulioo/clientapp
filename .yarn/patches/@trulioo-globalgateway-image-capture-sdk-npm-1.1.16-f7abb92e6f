@@ -1,0 +1,22 @@
+diff --git a/index.js b/index.js
+index 72c8775..0d83890 100644
+--- a/index.js
++++ b/index.js
+@@ -1,4 +1,4 @@
+-require('./GlobalGatewayCapturePublic/css/GlobalGatewayCapture.css');
++// require('./GlobalGatewayCapturePublic/css/GlobalGatewayCapture.css');
+ 
+ const packageJson = require('./package.json');
+ const mitekScienceSDK = require('./GlobalGatewayCapturePublic/globalgateway-sdk');
+@@ -109,7 +109,10 @@ const startCapture = (targetCaptureType) => (
+ 
+ module.exports = {
+   GlobalGatewayHints,
+-  Stop: () => mitekScienceSDK.cmd('SDK_STOP'),
++  Stop: () => {
++    clearTimeout(timer);
++    mitekScienceSDK.cmd('SDK_STOP');
++  },
+   StartCamera: (message, useButton) => mitekScienceSDK.on('CAMERA_DISPLAY_STARTED', () => {
+     module.exports.ShowHint(message);
+     setTimeout(() => {

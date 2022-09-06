@@ -1,0 +1,15 @@
+{
+  "data": {
+    "rawRiskScore": 17,
+    "rawResponsivenessScore": 19,
+    "adjustedScore": 16,
+    "scoreDescription": "Moderately Conservative",
+    "riskScore": 3,
+    "percentage": 0,
+    "responsivenessLevel": null,
+    "responsivenessLevelDisplay": null,
+    "scoreDescriptionId": "moderately_conservative"
+  },
+  "message": "risk score calculated",
+  "status": "success"
+}

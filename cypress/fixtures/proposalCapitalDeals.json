@@ -1,0 +1,96 @@
+[
+  {
+    "assetClass": "Real Estate",
+    "assets": [
+      {
+        "assetType": "deal",
+        "id": "1036",
+        "title": "Project Lakehaven",
+        "assetManager": "Golub & Company",
+        "preferences": "Sharia’h",
+        "expectedExit": "2026",
+        "expectedReturn": "9.5% IRR / 7% average yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "Co-investment with Golub & Company in a joint-venture acquisition of Lakehaven Apartments.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      },
+      {
+        "assetType": "deal",
+        "id": "1011",
+        "title": "Project Liberty",
+        "assetManager": "Broadshore Capital Partners",
+        "preferences": "Sharia’h",
+        "expectedExit": "2025",
+        "expectedReturn": "10% IRR / 6.5% Yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "338-unit multifamily consisting of six residential buildings in the suburb of Pittsburgh.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      }
+    ]
+  },
+  {
+    "assetClass": "Private Equity",
+    "assets": [
+      {
+        "assetType": "deal",
+        "id": "1036",
+        "title": "Project Lakehaven",
+        "assetManager": "Golub & Company",
+        "preferences": "Sharia’h",
+        "expectedExit": "2026",
+        "expectedReturn": "9.5% IRR / 7% average yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "Co-investment with Golub & Company in a joint-venture acquisition of Lakehaven Apartments.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      },
+      {
+        "assetType": "deal",
+        "id": "1011",
+        "title": "Project Liberty",
+        "assetManager": "Broadshore Capital Partners",
+        "preferences": "Sharia’h",
+        "expectedExit": "2025",
+        "expectedReturn": "10% IRR / 6.5% Yield / 1.5x MOIC",
+        "country": "United States",
+        "sector": "Residential",
+        "description": "338-unit multifamily consisting of six residential buildings in the suburb of Pittsburgh.",
+        "targetReturn": "",
+        "targetYield": "",
+        "fundTerm": "",
+        "administrator": "",
+        "auditor": "",
+        "assetClass": "Real Estate",
+        "shareClasses": "",
+        "redemptions": "",
+        "offeringPeriod": ""
+      }
+    ]
+  }
+]

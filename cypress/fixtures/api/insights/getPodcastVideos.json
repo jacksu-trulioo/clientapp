@@ -1,0 +1,252 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/podcastVideos"
+  },
+  "definitions": {
+    "podcastVideos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/definitions/Content"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "full_slug": {
+          "type": "string"
+        },
+        "sort_by_date": {
+          "type": "null"
+        },
+        "position": {
+          "type": "integer"
+        },
+        "tag_list": {
+          "type": "array",
+          "items": {}
+        },
+        "is_startpage": {
+          "type": "boolean"
+        },
+        "parent_id": {
+          "type": "integer"
+        },
+        "meta_data": {
+          "type": "null"
+        },
+        "group_id": {
+          "type": "string"
+        },
+        "first_published_at": {
+          "type": "string"
+        },
+        "release_id": {
+          "type": "null"
+        },
+        "lang": {
+          "$ref": "#/definitions/Lang"
+        },
+        "path": {
+          "type": "null"
+        },
+        "alternates": {
+          "type": "array",
+          "items": {}
+        },
+        "default_full_slug": {
+          "type": "null"
+        },
+        "translated_slugs": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "alternates",
+        "content",
+        "created_at",
+        "default_full_slug",
+        "first_published_at",
+        "full_slug",
+        "group_id",
+        "id",
+        "is_startpage",
+        "lang",
+        "meta_data",
+        "name",
+        "parent_id",
+        "path",
+        "position",
+        "published_at",
+        "release_id",
+        "slug",
+        "sort_by_date",
+        "tag_list",
+        "translated_slugs",
+        "uuid"
+      ],
+      "title": "podcastVideos"
+    },
+    "Content": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "_uid": {
+          "type": "string"
+        },
+        "Title": {
+          "$ref": "#/definitions/Title"
+        },
+        "SRT_File": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "VideoURL": {
+          "type": "string"
+        },
+        "component": {
+          "$ref": "#/definitions/Component"
+        },
+        "BannerImage": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "PosterImage": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "PublishDate": {
+          "type": "string"
+        },
+        "SRT_File_AR": {
+          "$ref": "#/definitions/BannerImage"
+        },
+        "EstimatedDuration": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "BannerImage",
+        "Description",
+        "EstimatedDuration",
+        "PosterImage",
+        "PublishDate",
+        "SRT_File",
+        "SRT_File_AR",
+        "Title",
+        "VideoURL",
+        "_uid",
+        "component"
+      ],
+      "title": "Content"
+    },
+    "BannerImage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alt": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "focus": {
+          "type": "null"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "filename": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "copyright": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "fieldtype": {
+          "$ref": "#/definitions/Fieldtype"
+        }
+      },
+      "required": [
+        "alt",
+        "copyright",
+        "fieldtype",
+        "filename",
+        "focus",
+        "id",
+        "name",
+        "title"
+      ],
+      "title": "BannerImage"
+    },
+    "Fieldtype": {
+      "type": "string",
+      "title": "Fieldtype"
+    },
+    "Title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "Component": {
+      "type": "string",
+      "title": "Component"
+    },
+    "Lang": {
+      "type": "string",
+      "title": "Lang"
+    }
+  }
+}

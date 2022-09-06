@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "required": [
+    "blocked",
+    "created_at",
+    "email",
+    "email_verified",
+    "family_name",
+    "given_name",
+    "identities",
+    "name",
+    "nickname",
+    "picture",
+    "updated_at",
+    "user_id",
+    "user_metadata",
+    "username",
+    "last_password_reset",
+    "last_login",
+    "last_ip",
+    "logins_count"
+  ],
+  "properties": {
+    "blocked": {
+      "type": "boolean"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "email_verified": {
+      "type": "boolean"
+    },
+    "family_name": {
+      "type": "string"
+    },
+    "given_name": {
+      "type": "string"
+    },
+    "identities": {
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "user_metadata": {
+      "type": "object",
+      "required": [
+        "phone_number",
+        "force_change_password",
+        "registered_devices",
+        "contact_preference",
+        "mfa_access",
+        "mfa_use"
+      ],
+      "properties": {
+        "phone_number": {
+          "type": "string"
+        },
+        "force_change_password": {
+          "type": "boolean"
+        },
+        "registered_devices": {
+          "type": "array"
+        },
+        "contact_preference": {
+          "type": "string"
+        },
+        "mfa_access": {
+          "type": "string"
+        },
+        "mfa_use": {
+          "type": "boolean"
+        }
+      }
+    },
+    "username": {
+      "type": "string"
+    },
+    "last_password_reset": {
+      "type": "string"
+    },
+    "last_login": {
+      "type": "string"
+    },
+    "last_ip": {
+      "type": "string"
+    },
+    "logins_count": {
+      "type": "integer"
+    }
+  }
+}

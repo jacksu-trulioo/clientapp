@@ -1,0 +1,13 @@
+{
+  "passportFront": true,
+  "passportFrontFileName": "Passport.jpg",
+  "passportSignature": false,
+  "passportSignatureFileName": null,
+  "nationalIdFront": true,
+  "nationalIdFrontFileName": "National_ID.jpg",
+  "nationalIdBack": false,
+  "nationalIdBackFileName": null,
+  "livePhoto": false,
+  "livePhotoFileName": null,
+  "callScheduled": false
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "insightType": "MonthlyMarketUpdate",
+    "id": "94462860",
+    "title": "Title Lorem ipsum dolor sit amet",
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "publishDate": "2021-12-20T21:00:00",
+    "estimatedDuration": "10 min"
+  },
+  {
+    "insightType": "MonthlyMarketUpdate",
+    "id": "94461030",
+    "title": "Title Lorem ipsum dolor sit amet",
+    "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+    "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
+    "publishDate": "2021-12-16T00:52:00",
+    "estimatedDuration": "10 min"
+  }
+]

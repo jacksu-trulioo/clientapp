@@ -1,0 +1,286 @@
+{
+  "$ref": "#/definitions/totalInvestments",
+  "definitions": {
+    "totalInvestments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lastValuationDate": {
+          "type": "string"
+        },
+        "deals": {
+          "type": "integer"
+        },
+        "avgHoldingPeriod": {
+          "type": "number"
+        },
+        "pieChartData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PieChartData"
+          }
+        },
+        "regionPercentage": {
+          "$ref": "#/definitions/RegionPercentage"
+        },
+        "investments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Investment"
+          }
+        },
+        "investmentVehicleList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["investmentVehicleList", "investments"],
+      "title": "totalInvestments"
+    },
+    "Investment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        }
+      },
+      "required": ["deals", "investmentVehicle", "region"],
+      "title": "Investment"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "portfolioSize": {
+          "type": "number"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "industry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Industry"
+          }
+        },
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "distributionAmount": {
+          "type": "number"
+        },
+        "marketValue": {
+          "type": "number"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "performance": {
+          "$ref": "#/definitions/Performance"
+        },
+        "holdingPeriod": {
+          "type": "integer"
+        },
+        "initialInvestmentDate": {
+          "type": "string"
+        },
+        "priceDate": {
+          "type": "string"
+        },
+        "sponsorOrPartner": {
+          "type": "string"
+        },
+        "strategy": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "brochure": {
+          "$ref": "#/definitions/Brochure"
+        }
+      },
+      "required": [
+        "age",
+        "bookValue",
+        "brochure",
+        "distributionAmount",
+        "holdingPeriod",
+        "id",
+        "industry",
+        "initialInvestmentDate",
+        "investmentVehicle",
+        "marketValue",
+        "name",
+        "performance",
+        "portfolioSize",
+        "region",
+        "sponsorOrPartner",
+        "strategy",
+        "type"
+      ],
+      "title": "Deal"
+    },
+    "Brochure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Region"
+        },
+        "description": {
+          "type": "string"
+        },
+        "largeImageURL": {
+          "type": "string"
+        },
+        "smallImage1URL": {
+          "type": "string"
+        },
+        "smallImage2URL": {
+          "type": "string"
+        }
+      },
+      "required": ["address", "description"],
+      "title": "Brochure"
+    },
+    "Industry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/Key"
+        },
+        "langCode": {
+          "$ref": "#/definitions/LangCode"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["key", "langCode", "value"],
+      "title": "Industry"
+    },
+    "Performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "Performance"
+    },
+    "PieChartData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "y": {
+          "type": "integer"
+        }
+      },
+      "required": ["name", "y"],
+      "title": "PieChartData"
+    },
+    "RegionPercentage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "perNorthAmerica": {
+          "type": "number"
+        },
+        "perAsia": {
+          "type": "number"
+        },
+        "perEurope": {
+          "type": "number"
+        },
+        "perGlobal": {
+          "type": "number"
+        }
+      },
+      "required": ["perAsia", "perEurope", "perGlobal", "perNorthAmerica"],
+      "title": "RegionPercentage"
+    },
+    "Region": {
+      "type": "string",
+      "enum": ["europe", "global", "asia", "northAmerica"],
+      "title": "Region"
+    },
+    "Key": {
+      "type": "string",
+      "enum": [
+        "automotive",
+        "energy",
+        "transportation",
+        "realEstate",
+        "consumerStaples",
+        "consumerDiscretionary",
+        "healthCare",
+        "diversified",
+        "other",
+        "industrials",
+        "financials",
+        "informationTechnology",
+        "telecommunicationServices"
+      ],
+      "title": "Key"
+    },
+    "LangCode": {
+      "type": "string",
+      "enum": ["EN", "AR"],
+      "title": "LangCode"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["downwards", "upwards", "neutral"],
+      "title": "Direction"
+    },
+    "Strategy": {
+      "type": "string",
+      "enum": ["illiquid", "liquid"],
+      "title": "Strategy"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "alt",
+        "yielding",
+        "privateEquity",
+        "realEstate",
+        "fixedIncome",
+        "otherIlliquid",
+        "cash"
+      ],
+      "title": "Type"
+    }
+  }
+}

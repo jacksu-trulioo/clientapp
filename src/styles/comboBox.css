@@ -1,0 +1,68 @@
+.comboBoxSelector .rw-widget-picker,
+.comboBoxSelector .rw-popup {
+  background-color: #222;
+  border: 1px solid #4d4d4d;
+}
+
+.comboBoxSelector .rw-widget-picker .rw-widget-input {
+  color: #fff;
+  font-weight: bold;
+}
+
+.comboBoxSelector .rw-input-addon,
+.rw-input-addon.rw-picker-btn {
+  border: 0 !important;
+}
+
+.comboBoxSelector .rw-list-option,
+.rw-list-option-create {
+  color: #ffffff;
+}
+
+.comboBoxSelector .rw-list-option.rw-state-selected,
+.rw-state-selected.rw-list-option-create {
+  color: #b99855;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.comboBoxSelector .rw-list-option {
+  border: none;
+}
+
+.comboBoxSelector .rw-list-option:hover,
+.comboBoxSelector .rw-list-option-create:hover,
+.comboBoxSelector [data-intent="keyboard"] .rw-list-option.rw-state-focus:not(.rw-state-selected),
+.comboBoxSelector [data-intent="keyboard"] .rw-state-focus.rw-list-option-create:not(.rw-state-selected) {
+  background-color: #221c07;
+}
+
+.comboBoxSelector .rw-picker-btn:hover {
+  background-color: transparent;
+}
+
+.comboBoxSelector .rw-popup-container {
+  top: 120%;
+}
+
+.comboBoxSelector .rw-list-empty,
+.comboBoxSelector .rw-list-option,
+.comboBoxSelector .rw-list-option-create,
+.comboBoxSelector .rw-list-optgroup {
+  padding: 10px 13px;
+}
+
+.comboBoxSelector .rw-state-focus .rw-widget-picker {
+  box-shadow: none !important;
+  border: 1px solid #B99855 !important;
+}
+
+.comboBoxSelector .rw-state-focus .rw-slide-transition.rw-popup {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comboBoxSelector .rw-state-focus .rw-slide-transition-exited {
+  display: block;
+}

@@ -1,0 +1,83 @@
+{
+  "status": "PENDING_APPROVAL",
+  "opportunities": [
+    {
+      "title": "Feeney and Sons",
+      "country": "BO",
+      "sector": "bandwidth-monitored",
+      "component": "Metal",
+      "assetClass": "exploit",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": false,
+      "description": "Temporibus excepturi sed quia ratione.\nOdit recusandae error ipsam quae sit tempora laudantium non repellat.",
+      "sponsor": "Herzog, Grant and Treutel",
+      "expectedExit": "2022",
+      "id": "4e718484-9daa-4ad3-a117-f9da97fa59af"
+    },
+    {
+      "title": "Durgan - Sauer",
+      "country": "AS",
+      "sector": "Hat",
+      "component": "Car",
+      "assetClass": "copy",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": false,
+      "description": "Et non est ratione maiores autem voluptas culpa dignissimos dolore.\nProvident aperiam corporis.",
+      "sponsor": "Hoeger - Waters",
+      "expectedExit": "2022",
+      "id": "41883f95-c33d-404f-83c6-974c5212135d"
+    },
+    {
+      "title": "Waters, Gottlieb and O'Reilly",
+      "country": "ME",
+      "sector": "Mozambique",
+      "component": "Account",
+      "assetClass": "optical",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": false,
+      "description": "Quisquam quia minus.\nVoluptatem id voluptate sit.",
+      "sponsor": "Veum, Cassin and Bernier",
+      "expectedExit": "2022",
+      "id": "1c626985-223f-4eae-a01e-95f7ec952f82"
+    },
+    {
+      "title": "Beier, Witting and Cronin",
+      "country": "KP",
+      "sector": "Toys",
+      "component": "Interactions",
+      "assetClass": "Birr",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": false,
+      "description": "Sint eum totam velit est quisquam qui aliquam.\nQuas repellendus earum voluptas assumenda molestiae id.",
+      "sponsor": "Kling Group",
+      "expectedExit": "2022",
+      "id": "227712e3-d752-4dc5-906a-5a7c6b9a2315"
+    },
+    {
+      "title": "Schulist LLC",
+      "country": "BV",
+      "sector": "Kentucky",
+      "component": "Architect",
+      "assetClass": "logistical",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": false,
+      "description": "Quia ea dignissimos et atque doloremque occaecati.\nNisi maxime cumque delectus est aut amet qui consequatur corrupti.",
+      "sponsor": "Schmitt - Nicolas",
+      "expectedExit": "2022",
+      "id": "ac0de3fd-465c-4f95-b8f0-a4c35117ab4b"
+    },
+    {
+      "title": "Auer and Sons",
+      "country": "VI",
+      "sector": "payment",
+      "component": "International",
+      "assetClass": "Dollar",
+      "image": "https://via.placeholder.com/200/1A1A1A99",
+      "isShariahCompliant": true,
+      "description": "Earum et ea temporibus porro nemo.\nError officiis sit.",
+      "sponsor": "Daniel, Labadie and Douglas",
+      "expectedExit": "2022",
+      "id": "8b04cca2-486c-4f1c-932a-e9ad4294ae12"
+    }
+  ]
+}

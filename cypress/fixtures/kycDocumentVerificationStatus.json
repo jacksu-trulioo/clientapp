@@ -1,0 +1,13 @@
+{
+  "passportFront": false,
+  "passportFrontFileName": null,
+  "passportSignature": false,
+  "passportSignatureFileName": null,
+  "nationalIdFront": false,
+  "nationalIdFrontFileName": null,
+  "nationalIdBack": false,
+  "nationalIdBackFileName": null,
+  "livePhoto": false,
+  "livePhotoFileName": null,
+  "callScheduled": false
+}

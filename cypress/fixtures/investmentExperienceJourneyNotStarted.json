@@ -1,0 +1,16 @@
+{
+  "wealthDistribution": {
+    "cash": null,
+    "bonds": null,
+    "stockEquities": null,
+    "hedgeFunds": null,
+    "privateEquity": null,
+    "realEstate": null,
+    "other": null
+  },
+  "holdConcentratedPosition": null,
+  "concentratedPositionDetails": null,
+  "receivedInvestmentAdvisory": null,
+  "investmentInFinancialInstruments": null,
+  "financialTransactions": []
+}

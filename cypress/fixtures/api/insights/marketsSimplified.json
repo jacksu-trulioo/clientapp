@@ -1,0 +1,398 @@
+{
+  "$ref": "#/definitions/marketSimplified",
+  "definitions": {
+    "marketSimplified": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "watchlistResponse": {
+          "$ref": "#/definitions/WatchlistResponse"
+        },
+        "cardCategoriesResponse": {
+          "$ref": "#/definitions/CardCategoriesResponse"
+        },
+        "highlightsResponse": {
+          "$ref": "#/definitions/HighlightsResponse"
+        },
+        "topWeeklyResponse": {
+          "$ref": "#/definitions/TopWeeklyResponse"
+        }
+      },
+      "required": [
+        "cardCategoriesResponse",
+        "highlightsResponse",
+        "topWeeklyResponse",
+        "watchlistResponse"
+      ],
+      "title": "marketSimplified"
+    },
+    "CardCategoriesResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stockCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StockCategory"
+          }
+        },
+        "bondCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BondCategory"
+          }
+        },
+        "indexCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IndexCategory"
+          }
+        }
+      },
+      "required": ["bondCategories", "indexCategories", "stockCategories"],
+      "title": "CardCategoriesResponse"
+    },
+    "BondCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "categoryName": {
+          "type": "string"
+        },
+        "categoryNumber": {
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopBond"
+          }
+        }
+      },
+      "required": ["categoryName", "categoryNumber", "items"],
+      "title": "BondCategory"
+    },
+    "TopBond": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bondYields": {
+          "type": "string"
+        },
+        "bondMaturity": {
+          "type": "integer"
+        },
+        "flag": {
+          "type": "string"
+        },
+        "bondStockWeekChange": {
+          "$ref": "#/definitions/Change"
+        },
+        "bondYTDChange": {
+          "$ref": "#/definitions/Change"
+        },
+        "bondCloseChange": {
+          "$ref": "#/definitions/Change"
+        },
+        "bondWeekChange": {
+          "$ref": "#/definitions/Change"
+        }
+      },
+      "required": [
+        "bondCloseChange",
+        "bondMaturity",
+        "bondStockWeekChange",
+        "bondWeekChange",
+        "bondYTDChange",
+        "bondYields",
+        "flag"
+      ],
+      "title": "TopBond"
+    },
+    "Change": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        },
+        "unit": {
+          "$ref": "#/definitions/UnitUnion"
+        }
+      },
+      "required": ["direction", "percent", "unit"],
+      "title": "Change"
+    },
+    "IndexCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "categoryName": {
+          "type": "string"
+        },
+        "categoryNumber": {
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopIndex"
+          }
+        }
+      },
+      "required": ["categoryName", "categoryNumber", "items"],
+      "title": "IndexCategory"
+    },
+    "TopIndex": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "indexName": {
+          "type": "string"
+        },
+        "indexCode": {
+          "type": "string"
+        },
+        "indexLevel": {
+          "type": "string"
+        },
+        "indexFXStrength": {
+          "$ref": "#/definitions/IndexFXStrengthUnion"
+        },
+        "indexWeekChange": {
+          "$ref": "#/definitions/Change"
+        },
+        "indexYtdChange": {
+          "$ref": "#/definitions/Change"
+        },
+        "indexFXCurrencyCode": {
+          "type": "string"
+        },
+        "indexFXValue": {
+          "$ref": "#/definitions/IndexFxValue"
+        },
+        "indexYTDChange": {
+          "$ref": "#/definitions/Change"
+        }
+      },
+      "required": [
+        "indexCode",
+        "indexFXCurrencyCode",
+        "indexFXValue",
+        "indexLevel",
+        "indexName",
+        "indexWeekChange"
+      ],
+      "title": "TopIndex"
+    },
+    "IndexFxValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "IndexFxValue"
+    },
+    "StockCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "categoryName": {
+          "type": "string"
+        },
+        "categoryNumber": {
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStock"
+          }
+        }
+      },
+      "required": ["categoryName", "categoryNumber", "items"],
+      "title": "StockCategory"
+    },
+    "TopStock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stockCompany": {
+          "type": "string"
+        },
+        "stockCode": {
+          "type": "string"
+        },
+        "stockPrice": {
+          "type": "number"
+        },
+        "stockWeekChange": {
+          "$ref": "#/definitions/IndexFxValue"
+        },
+        "stockYTDChange": {
+          "$ref": "#/definitions/IndexFxValue"
+        }
+      },
+      "required": [
+        "stockCode",
+        "stockCompany",
+        "stockPrice",
+        "stockWeekChange",
+        "stockYTDChange"
+      ],
+      "title": "TopStock"
+    },
+    "HighlightsResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["highlights"],
+      "title": "HighlightsResponse"
+    },
+    "TopWeeklyResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "week": {
+          "type": "string"
+        },
+        "month": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "weekId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "sectionTitle": {
+          "type": "string"
+        },
+        "topBonds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopBond"
+          }
+        },
+        "topIndices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopIndex"
+          }
+        },
+        "topStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStock"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "messageAr": {
+          "type": "string"
+        },
+        "darstAudio": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "darstAudio",
+        "message",
+        "messageAr",
+        "month",
+        "sectionTitle",
+        "timestamp",
+        "topBonds",
+        "topIndices",
+        "topStocks",
+        "week",
+        "weekId",
+        "year"
+      ],
+      "title": "TopWeeklyResponse"
+    },
+    "WatchlistResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "indices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopIndex"
+          }
+        },
+        "bond": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopBond"
+          }
+        },
+        "stock": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TopStock"
+          }
+        }
+      },
+      "required": ["bond", "indices", "stock"],
+      "title": "WatchlistResponse"
+    },
+    "UnitUnion": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/UnitEnum"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "UnitUnion"
+    },
+    "IndexFXStrengthUnion": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/IndexFXStrengthEnum"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "IndexFXStrengthUnion"
+    },
+    "Direction": {
+      "type": "string",
+      "enum": ["downwards", "upwards", "neutral"],
+      "title": "Direction"
+    },
+    "UnitEnum": {
+      "type": "string",
+      "enum": ["", "BPS"],
+      "title": "UnitEnum"
+    },
+    "IndexFXStrengthEnum": {
+      "type": "string",
+      "enum": ["Weaker", "Stronger"],
+      "title": "IndexFXStrengthEnum"
+    }
+  }
+}

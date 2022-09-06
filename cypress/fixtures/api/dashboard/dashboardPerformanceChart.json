@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "required": [
+    "netChangePercent",
+    "timeperiod",
+    "cumulativeData",
+    "periodicData",
+    "timeLine",
+    "minMax"
+  ],
+  "properties": {
+    "netChangePercent": {
+      "type": "object",
+      "required": ["percent", "direction"],
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      }
+    },
+    "timeperiod": {
+      "type": "object",
+      "required": ["quarter", "year"],
+      "properties": {
+        "quarter": {
+          "type": "integer"
+        },
+        "year": {
+          "type": "integer"
+        }
+      }
+    },
+    "cumulativeData": {
+      "type": "array"
+    },
+    "periodicData": {
+      "type": "array"
+    },
+    "timeLine": {
+      "type": "array"
+    },
+    "minMax": {
+      "type": "object",
+      "required": ["max", "min"],
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

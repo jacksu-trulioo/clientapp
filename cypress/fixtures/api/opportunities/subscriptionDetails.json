@@ -1,0 +1,95 @@
+{
+  "$ref": "#/definitions/subscriptionDetails",
+  "definitions": {
+    "subscriptionDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subscriptionSavedClientAppDB": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SubscriptionSavedClientAppDB"
+          }
+        },
+        "subscriptionDealDTOList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SubscriptionDealDTOList"
+          }
+        },
+        "subscriptionProgramDTOList": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "subscriptionDealDTOList",
+        "subscriptionProgramDTOList",
+        "subscriptionSavedClientAppDB"
+      ],
+      "title": "subscriptionDetails"
+    },
+    "SubscriptionDealDTOList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dealId": {
+          "type": "integer"
+        },
+        "dealName": {
+          "type": "string"
+        },
+        "investmentAmount": {
+          "type": "integer"
+        },
+        "isInvestmentPreferenceShariah": {
+          "type": "boolean"
+        },
+        "associatedConventionalDealId": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "associatedConventionalDealId",
+        "dealId",
+        "dealName",
+        "investmentAmount",
+        "isInvestmentPreferenceShariah"
+      ],
+      "title": "SubscriptionDealDTOList"
+    },
+    "SubscriptionSavedClientAppDB": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "clientId": {
+          "type": "integer"
+        },
+        "dealId": {
+          "type": "integer"
+        },
+        "dealName": {
+          "type": "string"
+        },
+        "totalInvestmentAmount": {
+          "type": "integer"
+        },
+        "isProgram": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "clientId",
+        "dealId",
+        "dealName",
+        "id",
+        "isProgram",
+        "totalInvestmentAmount"
+      ],
+      "title": "SubscriptionSavedClientAppDB"
+    }
+  }
+}

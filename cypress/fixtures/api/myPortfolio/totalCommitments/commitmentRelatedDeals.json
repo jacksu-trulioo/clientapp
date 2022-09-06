@@ -1,0 +1,210 @@
+{
+  "$ref": "#/definitions/commitments",
+  "definitions": {
+    "commitments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "groupByDeals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupByDeal"
+          }
+        }
+      },
+      "required": ["groupByDeals"],
+      "title": "commitments"
+    },
+    "GroupByDeal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "timeperiod": {
+          "$ref": "#/definitions/Timeperiod"
+        },
+        "deals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Deal"
+          }
+        }
+      },
+      "required": ["deals", "timeperiod"],
+      "title": "GroupByDeal"
+    },
+    "Deal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "investments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Investment"
+          }
+        }
+      },
+      "required": ["investmentVehicle", "investments", "region"],
+      "title": "Deal"
+    },
+    "Investment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "portfolioSize": {
+          "type": "number"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "region": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "industry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Industry"
+          }
+        },
+        "investmentVehicle": {
+          "type": "string"
+        },
+        "distributionAmount": {
+          "type": "number"
+        },
+        "marketValue": {
+          "type": "number"
+        },
+        "bookValue": {
+          "type": "number"
+        },
+        "performance": {
+          "$ref": "#/definitions/Performance"
+        },
+        "holdingPeriod": {
+          "type": "integer"
+        },
+        "initialInvestmentDate": {
+          "type": "string"
+        },
+        "sponsorOrPartner": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        },
+        "brochure": {
+          "$ref": "#/definitions/Brochure"
+        }
+      },
+      "required": [
+        "age",
+        "bookValue",
+        "brochure",
+        "distributionAmount",
+        "holdingPeriod",
+        "id",
+        "industry",
+        "initialInvestmentDate",
+        "investmentVehicle",
+        "marketValue",
+        "name",
+        "performance",
+        "portfolioSize",
+        "region",
+        "sponsorOrPartner",
+        "strategy",
+        "type"
+      ],
+      "title": "Investment"
+    },
+    "Brochure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["address", "description"],
+      "title": "Brochure"
+    },
+    "Industry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/Type"
+        },
+        "langCode": {
+          "$ref": "#/definitions/LangCode"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        }
+      },
+      "required": ["key", "langCode", "value"],
+      "title": "Industry"
+    },
+    "Performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "percent": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string"
+        }
+      },
+      "required": ["direction", "percent"],
+      "title": "Performance"
+    },
+    "Timeperiod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "quarter": {
+          "type": "integer"
+        }
+      },
+      "required": ["quarter", "year"],
+      "title": "Timeperiod"
+    },
+    "Type": {
+      "type": "string",
+      "enum": ["realEstate"],
+      "title": "Type"
+    },
+    "LangCode": {
+      "type": "string",
+      "enum": ["EN", "AR"],
+      "title": "LangCode"
+    },
+    "Value": {
+      "type": "string",
+      "enum": ["Real Estate", "العقارات"],
+      "title": "Value"
+    }
+  }
+}

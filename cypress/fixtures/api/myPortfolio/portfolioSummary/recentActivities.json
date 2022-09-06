@@ -1,0 +1,33 @@
+{
+  "type": "array",
+  "default": [],
+  "title": "Recent Activities",
+  "items": {
+    "type": "object",
+    "title": "A Schema",
+    "required": ["month", "recentFunding", "moneyInvested", "distribution"],
+    "properties": {
+      "month": {
+        "type": "integer"
+      },
+      "recentFunding": {
+        "type": "integer"
+      },
+      "moneyInvested": {
+        "type": "number"
+      },
+      "distribution": {
+        "type": "object",
+        "required": ["capitalGain", "incomeDistribution"],
+        "properties": {
+          "capitalGain": {
+            "type": "number"
+          },
+          "incomeDistribution": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

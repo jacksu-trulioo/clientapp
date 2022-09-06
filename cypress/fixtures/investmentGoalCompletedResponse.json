@@ -1,0 +1,16 @@
+{
+  "whoIsPortfolioFor": "Myself",
+  "whoIsPortfolioForOtherDetails": null,
+  "investmentGoals": ["Diversify"],
+  "investmentGoalsOtherDetails": null,
+  "shouldGenerateIncome": "yes",
+  "investmentDurationInYears": 1,
+  "investmentAmountInUSD": 1000000,
+  "desiredAnnualIncome": 15000,
+  "topUpInvestmentAnnually": "yes",
+  "annualInvestmentTopUpAmountInUSD": 1000000,
+  "excludedAssets": [],
+  "additionalPreferences": ["Ethical"],
+  "additionalPreferenceOtherDetails": null,
+  "esgCompliant": "yes"
+}

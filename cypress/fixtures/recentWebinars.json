@@ -1,0 +1,20 @@
+{
+  "bannerImage": "https://via.placeholder.com/200/1A1A1A99",
+  "cardImage": "https://via.placeholder.com/200/1A1A1A99",
+  "description": "Quae temporibus dignissimos quam cupiditate.\nUt id est aperiam veniam facilis quae natus.",
+  "estimationDuration": "20 min",
+  "id": "88924027-547f-4704-9a42-7690ef680f5d",
+  "insightType": "Webinar",
+  "publishDate": "Mon Aug 29 2022",
+  "title": "Maxime corrupti qui quis magni enim.",
+  "video": "improvement",
+  "guests": [
+    {
+      "id": "6f53aca7-22b5-4737-b666-470440045218",
+      "name": "Juanita",
+      "picture": "https://via.placeholder.com/150/1A1A1A99",
+      "title": "Customer Identity Developer",
+      "type": "Developer"
+    }
+  ]
+}

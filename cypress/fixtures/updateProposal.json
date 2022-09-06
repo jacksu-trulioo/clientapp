@@ -1,0 +1,111 @@
+[
+  {
+    "type": "Growth",
+    "instanceId": "3187",
+    "expectedReturn": "0.07120000000000001",
+    "expectedYield": "0.0544",
+    "forecastedVolatility": "0.187",
+    "sharpeRatio": "0.34010695187165785",
+    "totalCommitted": "1000000",
+    "strategies": {
+      "capitalGrowth": {
+        "percentageAllocation": 0.14,
+        "deploymentYears": [93329, 46667]
+      },
+      "capitalYielding": {
+        "percentageAllocation": 0.56,
+        "deploymentYears": [373333, 186667]
+      },
+      "opportunistic": {
+        "percentageAllocation": 0.3,
+        "deploymentYears": [300000]
+      },
+      "absoluteReturn": {
+        "percentageAllocation": 0,
+        "deploymentYears": []
+      }
+    },
+    "earnings": [
+      {
+        "year": 2023,
+        "income": 30133,
+        "capital": 0,
+        "total": 30133,
+        "cumulativeDistribution": 30133,
+        "percentage": 3
+      },
+      {
+        "year": 2024,
+        "income": 48333,
+        "capital": 0,
+        "total": 48333,
+        "cumulativeDistribution": 78466,
+        "percentage": 8
+      },
+      {
+        "year": 2025,
+        "income": 54400,
+        "capital": 300000,
+        "total": 354400,
+        "cumulativeDistribution": 432866,
+        "percentage": 43
+      },
+      {
+        "year": 2026,
+        "income": 36400,
+        "capital": 0,
+        "total": 36400,
+        "cumulativeDistribution": 469266,
+        "percentage": 47
+      },
+      {
+        "year": 2027,
+        "income": 36400,
+        "capital": 533075,
+        "total": 569475,
+        "cumulativeDistribution": 1038741,
+        "percentage": 104
+      },
+      {
+        "year": 2028,
+        "income": 12133,
+        "capital": 266537,
+        "total": 278670,
+        "cumulativeDistribution": 1317411,
+        "percentage": 132
+      },
+      {
+        "year": 2029,
+        "income": 0,
+        "capital": 0,
+        "total": 0,
+        "cumulativeDistribution": 1317411,
+        "percentage": 132
+      },
+      {
+        "year": 2030,
+        "income": 217800,
+        "capital": 1099612,
+        "total": 1317412,
+        "cumulativeDistribution": 2634823,
+        "percentage": 263
+      }
+    ],
+    "graphData": [
+      {
+        "name": "1",
+        "capitalGrowth": 93329,
+        "capitalYielding": 373333,
+        "opportunistic": 300000,
+        "absoluteReturn": 0
+      },
+      {
+        "name": "2",
+        "capitalGrowth": 46667,
+        "capitalYielding": 186667,
+        "opportunistic": 0,
+        "absoluteReturn": 0
+      }
+    ]
+  }
+]
